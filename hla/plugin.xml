@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hla_metamodel -->
+      <package
+            uri="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.OmtPackage"
+            genModel="model/hla_metamodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated hla_metamodel -->
+      <parser
+            type="omt"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.util.OmtResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hla_metamodel -->
+      <package
+            uri="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/rtiapi"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.RtiapiPackage"
+            genModel="model/hla_metamodel.genmodel"/>
+   </extension>
+</plugin>
