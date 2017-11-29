@@ -14785,7 +14785,7 @@
       nsPrefix="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi">
     <eClassifiers xsi:type="ecore:EClass" name="Federate">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="HLAFederateAmbassador"
-          eType="#//rtiapi/HLAFederateAmbassador"/>
+          lowerBound="1" eType="#//rtiapi/HLAFederateAmbassador"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="HLAFederateAmbassador" instanceClassName="hla.rti1516e.FederateAmbassador"/>
   </eSubpackages>
