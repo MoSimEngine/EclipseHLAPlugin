@@ -34,7 +34,7 @@ public interface Federate extends EObject {
 	 * @return the value of the '<em>HLA Federate Ambassador</em>' attribute.
 	 * @see #setHLAFederateAmbassador(FederateAmbassador)
 	 * @see edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.RtiapiPackage#getFederate_HLAFederateAmbassador()
-	 * @model dataType="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.HLAFederateAmbassador"
+	 * @model dataType="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.HLAFederateAmbassador" required="true"
 	 * @generated
 	 */
 	FederateAmbassador getHLAFederateAmbassador();

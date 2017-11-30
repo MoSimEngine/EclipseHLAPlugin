@@ -203,7 +203,7 @@ public class RtiapiPackageImpl extends EPackageImpl implements RtiapiPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(federateEClass, Federate.class, "Federate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFederate_HLAFederateAmbassador(), this.getHLAFederateAmbassador(), "HLAFederateAmbassador", null, 0, 1, Federate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFederate_HLAFederateAmbassador(), this.getHLAFederateAmbassador(), "HLAFederateAmbassador", null, 1, 1, Federate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(hlaFederateAmbassadorEDataType, FederateAmbassador.class, "HLAFederateAmbassador", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
