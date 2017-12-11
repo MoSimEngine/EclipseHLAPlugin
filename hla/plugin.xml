@@ -28,4 +28,26 @@
             class="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.RtiapiPackage"
             genModel="model/hla_metamodel.genmodel"/>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hla_metamodel1 -->
+      <package
+            uri="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt"
+            class="ieee1516.omt.OmtPackage"
+            genModel="model/hla_metamodel1.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated hla_metamodel1 -->
+      <parser
+            type="omt"
+            class="ieee1516.omt.util.OmtResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hla_metamodel1 -->
+      <package
+            uri="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/rtiapi"
+            class="ieee1516.rtiapi.RtiapiPackage"
+            genModel="model/hla_metamodel1.genmodel"/>
+   </extension>
 </plugin>

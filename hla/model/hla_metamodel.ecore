@@ -14783,10 +14783,6 @@
   </eSubpackages>
   <eSubpackages name="rtiapi" nsURI="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/rtiapi"
       nsPrefix="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi">
-    <eClassifiers xsi:type="ecore:EClass" name="Federate">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="HLAFederateAmbassador"
-          lowerBound="1" eType="#//rtiapi/HLAFederateAmbassador"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="HLAFederateAmbassador" instanceClassName="hla.rti1516e.FederateAmbassador"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Federate"/>
   </eSubpackages>
 </ecore:EPackage>
