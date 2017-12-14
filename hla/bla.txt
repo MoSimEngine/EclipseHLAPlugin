@@ -15,7 +15,12 @@
 	<emf.Ecore2Java model="model/hla_metamodel.ecore" genModel="model/hla_metamodel1.genmodel" modelProject="target/model-gen/edit" modelProjectFragmentPath="model-gen" modelPluginID="${modelPlugin.ID}" generateEditProject="true" validateModel="true" />
 	<emf.Ecore2Java model="model/hla_metamodel.ecore" genModel="model/hla_metamodel1.genmodel" modelProject="target/model-gen/editor" modelProjectFragmentPath="model-gen" modelPluginID="${modelPlugin.ID}" generateEditorProject="true" validateModel="true" />
 
-	
+	genModel="model/hla_metamodel2.genmodel"
 	
 	
 </project>
+
+
+		<arg line="-modelProject target/workspace/hla.model src" />
+		<arg line="-editProject target/workspace/hla.edit src" />
+		<arg line="-editorProject target/workspace/hla.editor src" />
