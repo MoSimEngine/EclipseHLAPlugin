@@ -1,0 +1,21 @@
+<project>
+
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+
+	<target name="compile">
+		<emf.Ecore2Java model="${antfile.dir}/model/hla_metamodel.ecore" genModel="${antfile.dir}/model/hla_metamodel1.genmodel" modelProject="${antfile.dir}" modelProjectFragmentPath="model-gen" modelPluginID="${modelPlugin.ID}" generateJavaCode="true" generateModelProject="false" generateEditProject="false" generateEditorProject="false" validateModel="true">
+			<settings>
+			</settings>
+		</emf.Ecore2Java>
+	</target>
+
+
+	<emf.Ecore2Java model="model/hla_metamodel.ecore" genModel="model/hla_metamodel1.genmodel" modelProject="target/model-gen/edit" modelProjectFragmentPath="model-gen" modelPluginID="${modelPlugin.ID}" generateEditProject="true" validateModel="true" />
+	<emf.Ecore2Java model="model/hla_metamodel.ecore" genModel="model/hla_metamodel1.genmodel" modelProject="target/model-gen/editor" modelProjectFragmentPath="model-gen" modelPluginID="${modelPlugin.ID}" generateEditorProject="true" validateModel="true" />
+
+	
+	
+	
+</project>
