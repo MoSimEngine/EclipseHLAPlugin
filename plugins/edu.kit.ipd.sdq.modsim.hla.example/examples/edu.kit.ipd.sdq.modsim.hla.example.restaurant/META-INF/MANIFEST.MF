@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Test2
-Bundle-SymbolicName: hla.test2
+Bundle-SymbolicName: edu.kit.ipd.sdq.modsim.hla.example.restaurant
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: hla;bundle-version="1.0.0"
+Require-Bundle: edu.kit.ipd.sdq.modsim.hla;bundle-version="1.0.0"
