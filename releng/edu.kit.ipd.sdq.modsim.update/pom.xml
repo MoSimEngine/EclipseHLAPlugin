@@ -1,0 +1,16 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.kit.ipd.sdq.modsim</groupId>
+		<artifactId>releng</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>edu.kit.ipd.sdq.modsim.update</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>eclipse-repository</packaging>
+
+	<properties>
+		<!-- Do not skip the deployment here since we want this module to be deployed -->
+		<maven.deploy.skip>false</maven.deploy.skip>
+	</properties>
+</project>
