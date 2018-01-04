@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectModel>
+  <modelIdentification>
+    <name>Restaurant Drinks</name>
+    <type>FOM</type>
+    <version>4.0</version>
+    <modificationDate>2017-11-20</modificationDate>
+    <securityClassification>Unclassified</securityClassification>
+    <releaseRestriction>Other organizations not related to Federated Foods</releaseRestriction>
+    <description>Drinks for the modular restaurant.</description>
+    <poc>
+      <pocType>Author</pocType>
+      <pocName>Johannes</pocName>
+      <pocOrg>KIT</pocOrg>
+    </poc>
+    <reference>
+      <type>HTML document</type>
+      <identification>www.fedfoods.com/restsim.html</identification>
+    </reference>
+  </modelIdentification>
+  <objects>
+    <objectClass>
+      <name>HLAobjectRoot</name>
+      <objectClass>
+        <name>Food</name>
+        <objectClass>
+          <name>Drink</name>
+          <objectClass>
+            <name>Water</name>
+            <sharing>PublishSubscribe</sharing>
+            <semantics>Tap water</semantics>
+          </objectClass>
+          <objectClass>
+            <name>Coffee</name>
+            <sharing>PublishSubscribe</sharing>
+            <semantics>Brewed coffee</semantics>
+          </objectClass>
+          <objectClass>
+            <name notes="Soda"/>
+            <sharing>PublishSubscribe</sharing>
+            <semantics>Carbonated beverage</semantics>
+            <attribute>
+              <name>Flavor</name>
+              <dataType>FlavorType</dataType>
+              <updateType>Conditional</updateType>
+              <updateCondition>Customer request</updateCondition>
+              <ownership>NoTransfer</ownership>
+              <sharing>PublishSubscribe</sharing>
+              <dimensions>
+                <dimension>SodaFlavor</dimension>
+                <dimension>BarQuantity</dimension>
+              </dimensions>
+              <transportation>HLAreliable</transportation>
+              <order>TimeStamp</order>
+              <semantics>Flavor of soda</semantics>
+            </attribute>
+          </objectClass>
+        </objectClass>
+      </objectClass>
+    </objectClass>
+  </objects>
+  <dataTypes>
+    <enumeratedDataTypes>
+      <enumeratedData>
+        <name>FlavorType</name>
+        <representation>HLAinteger32BE</representation>
+        <semantics>Possible flavors of soda</semantics>
+        <enumerator>
+          <name>Cola</name>
+          <value>101</value>
+        </enumerator>
+        <enumerator>
+          <name>Orange</name>
+          <value>102</value>
+        </enumerator>
+        <enumerator>
+          <name>RootBeer</name>
+          <value>103</value>
+        </enumerator>
+        <enumerator>
+          <name>Cream</name>
+          <value>104</value>
+        </enumerator>
+      </enumeratedData>
+    </enumeratedDataTypes>
+  </dataTypes>
+</objectModel>
