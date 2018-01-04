@@ -1,8 +1,0 @@
-<project>
-	<emf.Ecore2Java model="model/hla_metamodel.ecore" genModel="model/hlatest.genmodel" modelPluginID="hla" generatemodelproject="yes" generateeditorproject="yes" generateeditproject="true" reconcilegenmodel="keep">
-		<arg line="-modelProject target/workspace/hla.model src" />
-		<arg line="-editProject target/workspace/hla.edit src" />
-		<arg line="-editorProject target/workspace/hla.editor src" />
-	</emf.Ecore2Java>
-</project>
-

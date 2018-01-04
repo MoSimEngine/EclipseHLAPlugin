@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/edu.kit.ipd.sdq.modsim.feature_1.0.0.qualifier.jar" id="edu.kit.ipd.sdq.modsim.feature" version="1.0.0.qualifier">
+      <category name="modsim"/>
+   </feature>
+   <category-def name="modsim" label="Modsim"/>
+</site>

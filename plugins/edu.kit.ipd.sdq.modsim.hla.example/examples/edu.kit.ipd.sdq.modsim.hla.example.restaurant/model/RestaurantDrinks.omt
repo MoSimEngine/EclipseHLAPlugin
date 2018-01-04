@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel xmlns:edu.kit.ipd.sdq.modsim.hla.ieee1516.omt="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt">
+  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Restaurant Drinks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>FOM</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>4.0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modificationDate>2017-11-20</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modificationDate>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:securityClassification>Unclassified</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:securityClassification>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:releaseRestriction>Other organizations not related to Federated Foods</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:releaseRestriction>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:description>Drinks for the modular restaurant.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:description>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>Author</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>Johannes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>KIT</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>HTML document</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>www.fedfoods.com/restsim.html</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
+  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
+  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAobjectRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Food</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Drink</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Water</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Tap water</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Coffee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Brewed coffee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name notes="Soda"></edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Carbonated beverage</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Flavor</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>FlavorType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Customer request</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>NoTransfer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>SodaFlavor</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>BarQuantity</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+              </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Flavor of soda</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
+  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataTypes>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedDataTypes>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FlavorType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Possible flavors of soda</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cola</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>101</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Orange</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>102</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RootBeer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>103</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cream</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>104</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedDataTypes>
+  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataTypes>
+</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel>
