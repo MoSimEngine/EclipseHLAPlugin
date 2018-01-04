@@ -3,15 +3,15 @@
 <plugin>
    <extension point="org.eclipse.ui.newWizards">
       <category
-            id="org.eclipse.emf.examples.EMF"
+            id="edu.kit.ipd.sdq.modsim.hla.example"
             name="KIT SDQ HLA Example"
             parentCategory="org.eclipse.ui.Examples">
       </category>
       <wizard
-            id="org.eclipse.emf.examples.JavaModelWizard"
+            id="edu.kit.ipd.sdq.modsim.hla.exampleWizard"
             name="HLA Examples"
             class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
-            category="org.eclipse.ui.Examples/org.eclipse.emf.examples.EMF"
+            category="org.eclipse.ui.Examples/edu.kit.ipd.sdq.modsim.hla.example"
             project="true"
             icon="icons/full/ctool16/NewEMFExample.gif">
          <description>Erstellung von Beispiel-Projekten</description>
@@ -21,8 +21,8 @@
    <extension point="org.eclipse.emf.common.ui.examples">
  
       <example
-            id="org.eclipse.emf.examples.JavaModel"
-            wizardID="org.eclipse.emf.examples.JavaModelWizard"
+            id="edu.kit.ipd.sdq.modsim.hla.example"
+            wizardID="edu.kit.ipd.sdq.modsim.hla.exampleWizard"
             pageImage="icon/NewEMFExample.gif">
          <projectDescriptor
                name="edu.kit.ipd.sdq.modsim.hla.example.restaurant"
