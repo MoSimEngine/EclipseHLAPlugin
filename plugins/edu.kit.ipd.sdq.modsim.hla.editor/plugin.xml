@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hla_metamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.presentation.OmtModelWizardID"
+            name="%_UI_OmtModelWizard_label"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.presentation.OmtModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/OmtModelFile.gif">
+         <description>%_UI_OmtModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hla_metamodel -->
+      <editor
+            id="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.presentation.OmtEditorID"
+            name="%_UI_OmtEditor_label"
+            icon="icons/full/obj16/OmtModelFile.gif"
+            extensions="omt"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.presentation.OmtEditor"
+            contributorClass="edu.kit.ipd.sdq.modsim.hla.ieee1516.omt.presentation.OmtActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hla_metamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.presentation.RtiapiModelWizardID"
+            name="%_UI_RtiapiModelWizard_label"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.presentation.RtiapiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtiapiModelFile.gif">
+         <description>%_UI_RtiapiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hla_metamodel -->
+      <editor
+            id="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.presentation.RtiapiEditorID"
+            name="%_UI_RtiapiEditor_label"
+            icon="icons/full/obj16/RtiapiModelFile.gif"
+            extensions="rtiapi"
+            class="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.presentation.RtiapiEditor"
+            contributorClass="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi.presentation.RtiapiActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
