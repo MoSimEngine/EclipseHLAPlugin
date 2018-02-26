@@ -43,66 +43,6 @@ import hla.rti1516e.time.HLAfloat64Interval;
 import hla.rti1516e.time.HLAfloat64Time;
 import hla.rti1516e.time.HLAfloat64TimeFactory;
 
-/**
- * This is an example federate demonstrating how to properly use the IEEE
- * 1516-2010 (HLA Evolved) Java interface supplied with Portico. The code
- * provided here is intended to break down many common actions into their atomic
- * elemenets and form a demonstration of the processed needed to perform them.
- * As such, the scenario has been kept purposefully simple.
- * 
- * As it is intended for example purposes, this is a rather simple federate. The
- * process is goes through is as follows:
- * 
- * 1. Create the RTIambassador 2. Connect to the RTIamsassador 3. Try to create
- * the federation (nofail) 4. Join the federation 5. Announce a Synchronization
- * Point (nofail) 6. Wait for the federation to Synchronized on the point 7.
- * Enable Time Regulation and Constrained 8. Publish and Subscribe 9. Register
- * an Object Instance 10. Main Simulation Loop (executes 20 times) 10.1 Update
- * attributes of registered object 10.2 Send an Interaction 10.3 Advance time by
- * 1.0 11. Delete the Object Instance 12. Resign from Federation 13. Try to
- * destroy the federation (nofail) 14. Disconnect from the RTI
- * 
- * NOTE: Those items marked with (nofail) deal with situations where multiple
- * federates may be working in the federation. In this sitaution, the federate
- * will attempt to carry out the tasks defined, but it won't stop or exit if
- * they fail. For example, if another federate has already created the
- * federation, the call to create it again will result in an exception. The
- * example federate expects this and will not fail. NOTE: Between actions 4. and
- * 5., the federate will pause until the uses presses the enter key. This will
- * give other federates a chance to enter the federation and prevent other
- * federates from racing ahead.
- * 
- * The main method to take notice of is {@link #runFederate(String)}. It
- * controls the main simulation loop and triggers most of the important
- * behaviour. To make the code simpler to read and navigate, many of the
- * important HLA activities are broken down into separate methods. For example,
- * if you want to know how to send an interaction, see the
- * {@link #sendInteraction()} method.
- * 
- * With regard to the FederateAmbassador, it will log all incoming information.
- * Thus, if it receives any reflects or interactions etc... you will be notified
- * of them.
- * 
- * Note that all of the methods throw an RTIexception. This class is the parent
- * of all HLA exceptions. The HLA Java interface is full of exceptions, with
- * only a handful being actually useful. To make matters worse, they're all
- * checked exceptions, so unlike C++, we are forced to handle them by the
- * compiler. This is unnecessary in this small example, so we'll just throw all
- * exceptions out to the main method and handle them there, rather than handling
- * each exception independently as they arise.
- * 
- * **Modular FOMs** The Portico 1516e RTI supports the use of modular FOMs when
- * creating or joining a federation. This example federate uses an example set
- * of FOM modules produced by Pitch (http://pitch.se). The example FOM is taken
- * from the standard HLA Restaurant Operations model. It is split over four
- * separate modules: 1. Restaurant Operations (RestaurantProcesses.xml) 2.
- * Restaurant Food (RestaurantFood.xml) 3. Restaurant Drinks
- * (RestaurantDrinks.xml) 4. Restaurant Soup (RestaurantSoup.xml)
- * 
- * In the demonstration, the first three modules are loaded as part of the
- * federation creation process, with the example federate providing the
- * Soup-based extension when it joins.
- */
 public class ChatClientFederate {
 	// ----------------------------------------------------------
 	// STATIC VARIABLES
