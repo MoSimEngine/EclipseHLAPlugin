@@ -1,649 +1,700 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel xmlns:edu.kit.ipd.sdq.modsim.hla.ieee1516.omt="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt">
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Serving processes for Restaurant FOM</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>FOM</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>3.0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modificationDate>2010-09-09</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modificationDate>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:securityClassification>Unclassified</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:securityClassification>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:description>Processes for the modular restaurant.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:description>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>Food Service Industry Taxonomy</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>Restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>Sponsor</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>Johannes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>KIT</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>HTML document</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>www.fedfoods.com/restsim.html</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAobjectRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Customer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Statement of money owed by the customer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Order</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Specific items requested by a customer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Employee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Neither</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>A person working for the restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>PayRate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>DollarRate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Merit increase</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Amount the employee is paid per hour</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>YearsOfService</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>Years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Periodic</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>1/year</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Number of years the employee has worked for the restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HomeNumber</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Employee request</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee home phone number</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HomeAddress</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>AddressType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Employee request</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee home address</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification notes="Note2">
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Serving processes for Restaurant FOM</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>FOM</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>3.0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modificationDate>2010-09-09</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modificationDate>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:securityClassification>Unclassified</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:securityClassification>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:releaseRestriction>Other organizations not related to Federated Foods</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:releaseRestriction>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:purpose>To define a processes module for a restaurant federation</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:purpose>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:applicationDomain>Restaurant operations</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:applicationDomain>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:description>Processes for the modular restaurant.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:description>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useLimitation>Derived models must reference this document</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useLimitation>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useHistory>Originally used as an example in the DoD HLA 1.3 specification</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useHistory>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useHistory>Used as an example in the HLA IEEE1516.2-2000 specification</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useHistory>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useHistory>Used as an example in the HLA IEEE1516.2-2010 specification after conversion to a FOM module (MIM information stripped out)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:useHistory>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>Food Service Industry Taxonomy</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>Restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>Food Service Industry Taxonomy</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>Menu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>Food Service Industry Taxonomy</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:taxonomy>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>Waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keywordValue>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:keyword>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>Sponsor</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>Mr. Joseph Doe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>Joe's Place</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocTelephone>1-977-555-1234</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocTelephone>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocEmail>doej@fedfoods.com</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocEmail>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>Author</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>Mr. Sven Swede</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocName>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>Federated Foods</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:pocOrg>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:poc>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>HTML document</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>www.fedfoods.com/restsim.html</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>Federation Agreements</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>www.fedfoods.com/restsimAgreement.pdf</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:identification>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reference>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:other>See Mobil International Restaurant Guide for more information</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:other>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:glyph alt="Restaurant" width="85" height="83" type="jpg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBhQSEBUSExQSFBQSEyAUFRcYFRYUGBkfHRQYHR8YGBgYHCgeGBslGxcdHy8gLycpLDgsHR89NTA2NSYsLSkBCQoKDQwOGQ4MGSkYFBgpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKf/AABEIAFMAVQMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAABwUGAQQIAwL/xAA5EAACAQMCAwUECQIHAAAAAAABAgMABBESIQUHMQYiQVFxE2GBoRQjMkJSkaKxwRVTCDNigpLC4f/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AGVxPmTw+3k9lLcoGwD3VeQb56sikZ26Zrf4J2stLvIt7iKUqMlVbvAeZU4YDPjiovi3K/h05Zmto1dty0eYiTnqdBAOT12qF7Ncrbe3ufapJcoVAICzlD170b6RllzpPXcEUDFpfcW7BwS2814yym8AlljkE0oKuGcppAbAA0rgY/ervPxFEOGPe/CoLN/xXJ+VVez7XSSyfRvoV1C0jyhXlXEWEbOSw37w6DHj1PWgtdkxMaFvtFAW8N8DPzr3rVsr5ZM4yGX7SkFWX1B9OvQ+FbJNBXu2vDzcQxQEExS3UazgErmPJJGQQQCQua+OC9lILK5X6NGYkkhcSAM5UlXjKnDE74Z/h6VHdveZVvYr7MFZbjUv1IJyBqBJZgDoOkbDrkjaofhXPK0luFEkcsCNHgyOQwVtX2SEz3cb6/PAx40DOqrcU5ncOt3aN7ldaHSyoryEEdQdCkAjB2zUv7eC9gYRyh43GkvDLgj0dDlTVHtOT1kZnLrK66js0rnbpqY7EsXDfD30Fm4TzEsLhC6XMSgNpIlYQt0zssmCRv1or3sew1jCulLS2A8cxK5PqWyT+dZoJw1FGImSRo8e0VgO+W0lTGnQDoMjy6qfPNSprRubWT2muMoCy6X1KT0JwRgjcZO3voDhyhda9WVsu3TUzAMTgdOuMeWB4VsRLux/1eWOgA+PrUTbTui3JZ9TJLu2nAC+yjJIUb4AJO5J2615y8SZJI41mgk9rJg7d5coSNlbBGoDy60EleIP80dY+pHioPeU+Y26eYrQ7acfFnYTXOe8keI/HLt3U/UQfQGtm2Vo/aCRkKkGTuqVxktqByTnzzt1NUjnMG/osZ8pYi/uGk9fdqxQIiadnZndi7udTMxyWJ6lj4k1gtlR7ifH0+74etMfsnykju+HpetcSR6w7FVRGGFdgMEkb93JrFz2D4dFw2Wdr4yyouoJG0Oz4wIyneYnUcE5Hj5UVWexHbWXhs7SRqrrIumSMkgNjJU5G4IJPgdiabPJG+mntrmWZ5HLXOxZiQMoGYICTpGpyce+qBy55cx8TgnZpZInikVVKhWUgoCQynfY+RFO7sf2YSwtEtkYvpJZnIClmZiSSB064x5AUE3RRRRBQaKKBW8z+YEvDrqOO19mWlT2kwdda9QqEYIIOFbO/lVX4Nzgupp4IZUthE9xECVRww+tTcEud9qhub8xbjFxn7gRV9BEp/cmqfFIVYMNirBh6g5Hzorrea1RpVLKrEKcZAOMEdMjbrWxJCGBVgGB2IIyD6g9ar/YXiUl3ZW93MR7SSM5VV0rvIRkA5PRB4+dWSiKr2ykWHg92VARfo8gAACgasqAAOm5Fcyg42/geHvp188OJy29vFbI31N1rEgKgt3WRgFYYxv8aSdFjoTkgkP9LDRrhzKwnOSSXGBnfoCmnamDSj/w+TH2V2v3RKjD1ZGB+SrTcogooooCg0UUHO3OyALxdyPvwRsfXDL+y1Qycb+VM7n7aab6CT+5b6fikh/hxSx0Z28zj86K6n7B2Jh4ZaRsMMtumoe8rk/M1PV5WsWlFX8KgfkAK9aIVX+ICyLWtvKOkc5U/wC9NvmlI+uiOdkGrhEh/BLG36wv/aud6LD05AQAWNw/i1zg+ixJj9zTRqg8kbPRwlW/uzPJ+rSPklX6iCiiigKKKwxxQLPnzwoPYRz4JaCYDI/DJ3Tn4hfypEIpJAHUkAeuac/MzmnZzWclpbN9IecaSwBCINQOcsO822wH5jbNC5Y9n1u+JxI+dEf174I+4QQDnwLYBxvRXS8IOkA9QBmvusCs0RRuc8RPB5sfdeNj6e1UfyK5yOcbdcbevh86624/wdLu2ltpM6JkKHBwRnoQfAggGuVYdcNwDp1Nby6iv2hmNxsSNsZXGen7UWOp+zXCltrOCBQQIolXB65xvn35JqTqn9kuaFnfskSMyXDqT7FgcjAycMBpYfH4eFXAUQUUUUBWDRRQaVvwuFXLrFErk7sI1DHf8QGaSPLOUntHKSd2a5z7/rP/AAUUUU/KKKKIwaQXI+Y/1eUZ+1byE+/E0Z/k1miinrDaIrEqiKW6kKAT6kDetiiiiCiiig//2Q==</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:glyph>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Greeter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics/>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAobjectRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass notes="Note1">
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Customer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Statement of money owed by the customer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Order</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Specific items requested by a customer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Employee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Neither</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>A person working for the restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute notes="Note4">
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>PayRate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>DollarRate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Merit increase</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Amount the employee is paid per hour</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute notes="Note5">
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>YearsOfService</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>Years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Periodic</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>1/year</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Number of years the employee has worked for the restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HomeNumber</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Employee request</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee home phone number</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HomeAddress</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>AddressType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Employee request</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee home address</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Greeter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics></edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics></edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Efficiency</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>WaiterValue</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Performance review</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Efficiency rating of waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cheerfulness</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>WaiterValue</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Performance review</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cheerfulness of waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>State</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>WaiterTasks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Work flow</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>What the waiter is doing</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cashier</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee who collects money</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Dishwasher</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cleaner of plates, pots, and utensils</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cook</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Preparer of the meal</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
         </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Efficiency</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>WaiterValue</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Performance review</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Efficiency rating of waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cheerfulness</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>WaiterValue</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Performance review</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cheerfulness of waiter</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>State</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>WaiterTasks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>Conditional</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateType>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>Work flow</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateCondition>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>DivestAcquire</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:ownership>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>What the waiter is doing</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cashier</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee who collects money</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Dishwasher</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cleaner of plates, pots, and utensils</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cook</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Preparer of the meal</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactions>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAinteractionRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerTransactions</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>The base class of interactions between customers and employee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactions>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerSeated</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer has occupied a table</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAinteractionRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerTransactions</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>The base class of interactions between customers and employee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerSeated</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer has occupied a table</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>OrderTaken</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has taken customers order</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FromKidsMenu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer ordered from children menu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FromAdultMeny</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer ordered from normal menu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FoodServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served food</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DrinkServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served a drink</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AppetizerServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served appetizers</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>MainCourseServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>WaiterId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+                        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served entree</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TemperatureOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>ServiceStat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Whether the food was the correct temperature</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AccuracyOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>ServiceStat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Whether the correct food was served</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TimlinessOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Whether the food was served in a reasonable amount of time</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DessertServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served dessert</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerPays</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer has paid bill</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ByCreditCard</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Credit card payment</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ByCash</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cash payment</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerLeaves</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer departs restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
         </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>OrderTaken</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has taken customers order</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FromKidsMenu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer ordered from children menu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FromAdultMeny</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer ordered from normal menu</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FoodServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served food</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DrinkServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served a drink</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AppetizerServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served appetizers</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>MainCourseServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>WaiterId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served entree</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TemperatureOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>ServiceStat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Whether the food was the correct temperature</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AccuracyOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>ServiceStat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Whether the correct food was served</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TimlinessOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Whether the food was served in a reasonable amount of time</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DessertServed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Waiter has served dessert</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerPays</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer has paid bill</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ByCreditCard</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Credit card payment</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ByCash</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>Publish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cash payment</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CustomerLeaves</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions/>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Customer departs restaurant</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactions>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>SodaFlavor</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>FlavorType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>linearEnumerated (Flavor, [Cola, Orange, RootBeer])</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>[0..3)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>BarQuantity</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>DrinkCount</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>25</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>linear (NumberCups, 1, 25)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>[0)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>WaiterId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>EmplId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>20</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>linear (WaiterId, 1, 20)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>Excluded</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:time>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:timeStamp>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>TimeType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Floating point value expressed in minutes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:timeStamp>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:lookahead>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>LAType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Floating point value expressed in minutes (non-negative)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:lookahead>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:time>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:tags>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateReflectTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateReflectTag>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sendReceiveTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sendReceiveTag>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:deleteRemoveTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Reason for deletion</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:deleteRemoveTag>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureRequestTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureRequestTag>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureCompletionTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureCompletionTag>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:acquisitionRequestTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:acquisitionRequestTag>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:requestUpdateTag>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:requestUpdateTag>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:tags>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizations>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>InitialPublish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when all classes are published and subscribed, and all initially present objects are registered</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>InitialUpdate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when instance attribute values for all initially present objects are updated</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>BeginTimeAdvance</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when time management services are invoked</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>PauseExecution</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>TimeType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when the time advance after the time in the user-supplied tag is attained; time advance 
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactions>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>SodaFlavor</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>FlavorType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>linearEnumerated (Flavor, [Cola, Orange, RootBeer])</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>[0..3)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>BarQuantity</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>DrinkCount</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>25</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>linear (NumberCups, 1, 25)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>[0)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>WaiterId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>EmplId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>20</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:upperBound>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>linear (WaiterId, 1, 20)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:normalization>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>Excluded</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimension>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dimensions>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:time>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:timeStamp>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>TimeType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Floating point value expressed in minutes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:timeStamp>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:lookahead>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>LAType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Floating point value expressed in minutes (non-negative)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:lookahead>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:time>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:tags>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateReflectTag>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateReflectTag>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sendReceiveTag>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sendReceiveTag>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:deleteRemoveTag notes="Note3">
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Reason for deletion</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:deleteRemoveTag>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureRequestTag>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureRequestTag>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureCompletionTag>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:divestitureCompletionTag>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:acquisitionRequestTag>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:acquisitionRequestTag>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:requestUpdateTag>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:requestUpdateTag>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:tags>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizations>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>InitialPublish</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when all classes are published and subscribed, and all initially present objects are registered</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>InitialUpdate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when instance attribute values for all initially present objects are updated</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>BeginTimeAdvance</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when time management services are invoked</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>PauseExecution</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>TimeType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:capability>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Achieved when the time advance after the time in the user-supplied tag is attained; time advance 
 requests should then cease</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizations>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportations>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>LowLatency</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reliable>No</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reliable>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Choose the delivery mechanism that results in the lowest latency from service initiation to callback invocation at the receiving federate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportations>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:switches>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:autoProvide isEnabled="true"/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:conveyRegionDesignatorSets/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:conveyProducingFederate/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attributeScopeAdvisory/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attributeRelevanceAdvisory/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClassRelevanceAdvisory isEnabled="true"/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionRelevanceAdvisory isEnabled="true"/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:serviceReporting/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:exceptionReporting/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:delaySubscriptionEvaluation/>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:automaticResignAction resignAction="CancelThenDeleteThenDivest"/>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:switches>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRates>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Low</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>10.56</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics/>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Hi</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>60.0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics/>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRates>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataTypes>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicDataRepresentations>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>UnsignedShort</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:size>16</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:size>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interpretation>Integer in the range [0, 2^16 - 1]</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interpretation>
-               <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>16-bit unsigned integer.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicData>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicDataRepresentations>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleDataTypes>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TimeType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAfloat32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Minutes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>0.01667</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Time representation</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>LAType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAfloat32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Minutes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>0.01667</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Time interval (non-negative)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DollarRate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAfloat32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>$/hour</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>0.01</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cost per hour</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Elapsed time in years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DrinkCount</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>UnsignedShort</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Cups</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Measure of number of drinks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>EmplId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee identifier</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RateScale</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Evaluation of staff where 1 = best</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleDataTypes>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedDataTypes>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>WaiterTasks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Possible activities of waiters</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TakingOrder</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Serving</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>2</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cleaning</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CalculatingBill</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>4</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Other</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>5</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ExperienceLevel</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Level of experience of waiters</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Trainee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Apprentice</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Journeyman</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>2</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Senior</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Temporary</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>4</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Master</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>5</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FlavorType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Possible flavors of soda</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cola</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>101</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Orange</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>102</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RootBeer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>103</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cream</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>104</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedDataTypes>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayDataTypes>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Employees</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>EmplId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>10</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAfixedArray</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Identifiers of employees currently working</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AddressBook</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>AddressType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>Dynamic</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>An HLAinteger32BE followed by a set of index-value tuples. Each tuple consists of an HLAinteger32BE indicating the array index, followed by the element for that index. The initial HLAinteger32BE indicates the number of index-value pairs to follow, since all array elements need not be included.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Collection of all employee addresses</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayDataTypes>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordDataTypes>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ServiceStat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAfixedRecord</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Check-off on whether the server performed properly on elements of the meal</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>EntreeOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Entree status</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Veggy1Ok</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Vegetable 1 status</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Veggy2Ok</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Vegetable 2 status</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AddressType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAfixedRecord</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Mailing address</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Name</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee name</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Street</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Street address</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>City</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>City name</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>State</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>State abbreviation</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Zip</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Postal code</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordDataTypes>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordDataTypes>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordData>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>WaiterValue</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:discriminant>ValIndex</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:discriminant>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>ExperienceLevel</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>Trainee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CoursePassed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Ratings scale for employees under training</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>[Apprentice .. Senior], Master</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Rating</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>RateScale</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Ratings scale for permanent employees</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>HLAother</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Other</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAtoken</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>All others</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAvariantRecord</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Datatype for waiter performance rating value</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordData>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordDataTypes>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataTypes>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizationPoint>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:synchronizations>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportations>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>LowLatency</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reliable>No</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:reliable>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Choose the delivery mechanism that results in the lowest latency from service initiation to callback invocation at the receiving federate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportations>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:switches>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:autoProvide isEnabled="true"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:conveyRegionDesignatorSets isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:conveyProducingFederate isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attributeScopeAdvisory isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attributeRelevanceAdvisory isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClassRelevanceAdvisory isEnabled="true"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionRelevanceAdvisory isEnabled="true"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:serviceReporting isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:exceptionReporting isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:delaySubscriptionEvaluation isEnabled="false"/>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:automaticResignAction resignAction="CancelThenDeleteThenDivest"/>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:switches>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRates>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Low</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>10.56</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics></edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Hi</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>60.0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:rate>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics></edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRate>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:updateRates>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataTypes>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicDataRepresentations>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>UnsignedShort</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:size>16</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:size>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interpretation>Integer in the range [0, 2^16 - 1]</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interpretation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:endian>Big</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:endian>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>16-bit unsigned integer.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicData>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:basicDataRepresentations>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleDataTypes>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TimeType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAfloat32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Minutes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>0.01667</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Time representation</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>LAType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAfloat32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Minutes</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>0.01667</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Time interval (non-negative)</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DollarRate</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAfloat32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>$/hour</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>0.01</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Cost per hour</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Elapsed time in years</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>DrinkCount</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>UnsignedShort</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>Cups</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Measure of number of drinks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>EmplId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee identifier</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RateScale</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>NA</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:units>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:resolution>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>Perfect</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:accuracy>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Evaluation of staff where 1 = best</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleData>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:simpleDataTypes>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedDataTypes>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>WaiterTasks</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Possible activities of waiters</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>TakingOrder</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Serving</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>2</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cleaning</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CalculatingBill</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>4</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Other</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>5</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ExperienceLevel</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Level of experience of waiters</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Trainee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Apprentice</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Journeyman</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>2</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Senior</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Temporary</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>4</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Master</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>5</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>FlavorType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:representation>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Possible flavors of soda</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cola</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>101</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Orange</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>102</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RootBeer</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>103</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Cream</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>104</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:value>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedData>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumeratedDataTypes>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayDataTypes>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Employees</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>EmplId</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>10</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAfixedArray</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Identifiers of employees currently working</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AddressBook</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>AddressType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>Dynamic</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:cardinality>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>An HLAinteger32BE followed by a set of index-value tuples. Each tuple consists of an HLAinteger32BE indicating the array index, followed by the element for that index. The initial HLAinteger32BE indicates the number of index-value pairs to follow, since all array elements need not be included.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Collection of all employee addresses</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayData>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:arrayDataTypes>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordDataTypes>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>ServiceStat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAfixedRecord</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Check-off on whether the server performed properly on elements of the meal</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>EntreeOk</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Entree status</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Veggy1Ok</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Vegetable 1 status</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Veggy2Ok</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Vegetable 2 status</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>AddressType</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAfixedRecord</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Mailing address</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Name</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Employee name</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Street</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Street address</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>City</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>City name</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>State</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>State abbreviation</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Zip</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Postal code</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:field>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordData>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:fixedRecordDataTypes>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordDataTypes>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordData>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>WaiterValue</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:discriminant>ValIndex</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:discriminant>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>ExperienceLevel</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>Trainee</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>CoursePassed</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAboolean</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Ratings scale for employees under training</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>[Apprentice .. Senior], Master</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Rating</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>RateScale</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Ratings scale for permanent employees</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>HLAother</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:enumerator>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Other</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAtoken</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+                    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>All others</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+                </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:alternative>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>HLAvariantRecord</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:encoding>
+                <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Datatype for waiter performance rating value</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordData>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:variantRecordDataTypes>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataTypes>
+    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:notes>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>Note1</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Example of a note attached to the entire object model</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>Note2</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Example of a note attached to an entire table</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>Note3</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Example of a note attached to a table cell</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>Note4</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Merit raises are not provided according to any regular time interval; they are provided on a supervisor's recommendation based on evidence of exceptional effort and performance</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>Note5</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:label>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>Years of service are a factor in any merit raise. This value is only changed on the anniversary of the employee's hire.</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:semantics>
+        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:note>
+    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:notes>
 </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel>

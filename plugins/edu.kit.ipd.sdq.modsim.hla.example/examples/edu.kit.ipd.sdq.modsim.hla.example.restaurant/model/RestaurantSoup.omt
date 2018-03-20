@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel xmlns:edu.kit.ipd.sdq.modsim.hla.ieee1516.omt="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt">    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
+<edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel xmlns:edu.kit.ipd.sdq.modsim.hla.ieee1516.omt="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt"> 
+   <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RestaurantSoup</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>FOM</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:type>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>1.0</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:version>

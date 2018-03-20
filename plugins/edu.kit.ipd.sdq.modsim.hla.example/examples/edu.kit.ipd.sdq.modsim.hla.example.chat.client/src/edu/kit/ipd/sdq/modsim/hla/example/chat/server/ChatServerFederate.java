@@ -12,11 +12,9 @@
  *   (that goes for your lawyer as well)
  *
  */
-package edu.kit.ipd.sdq.modsim.hla.example.chat.client;
+package edu.kit.ipd.sdq.modsim.hla.example.chat.server;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -26,7 +24,6 @@ import hla.rti1516e.CallbackModel;
 import hla.rti1516e.InteractionClassHandle;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
-import hla.rti1516e.ParameterHandleValueMap;
 import hla.rti1516e.RTIambassador;
 import hla.rti1516e.ResignAction;
 import hla.rti1516e.RtiFactoryFactory;
@@ -39,7 +36,7 @@ import hla.rti1516e.time.HLAfloat64Interval;
 import hla.rti1516e.time.HLAfloat64Time;
 import hla.rti1516e.time.HLAfloat64TimeFactory;
 
-public class ChatClientFederate {
+public class ChatServerFederate {
 	// ----------------------------------------------------------
 	// STATIC VARIABLES
 	// ----------------------------------------------------------
@@ -51,7 +48,7 @@ public class ChatClientFederate {
 	// INSTANCE VARIABLES
 	// ----------------------------------------------------------
 	private RTIambassador rtiamb;
-	private ChatClientFederateAmbassador fedamb; // created when we connect
+	private ChatServerFederateAmbassador fedamb; // created when we connect
 	private HLAfloat64TimeFactory timeFactory; // set when we join
 	protected EncoderFactory encoderFactory; // set when we join
 
@@ -75,20 +72,6 @@ public class ChatClientFederate {
 		System.out.println("ChatFederate   : " + message);
 	}
 
-	/**
-	 * This method will block until the user presses enter
-	 */
-	private void waitForUser() {
-		log(" >>>>>>>>>> Press Enter to Continue <<<<<<<<<<");
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		try {
-			reader.readLine();
-		} catch (Exception e) {
-			log("Error while waiting for user input: " + e.getMessage());
-			e.printStackTrace();
-		}
-	}
-
 	///////////////////////////////////////////////////////////////////////////
 	////////////////////////// Main Simulation Method /////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -107,7 +90,7 @@ public class ChatClientFederate {
 
 		// connect
 		log("Connecting...");
-		fedamb = new ChatClientFederateAmbassador(this);
+		fedamb = new ChatServerFederateAmbassador(this);
 		rtiamb.connect(fedamb, CallbackModel.HLA_EVOKED);
 
 		//////////////////////////////
@@ -155,12 +138,6 @@ public class ChatClientFederate {
 		while (fedamb.isAnnounced == false) {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
-
-		// WAIT FOR USER TO KICK US OFF
-		// So that there is time to add other federates, we will wait until the
-		// user hits enter before proceeding. That was, you have time to start
-		// other federates.
-		waitForUser();
 
 		///////////////////////////////////////////////////////
 		// 6. achieve the point and wait for synchronization //
@@ -234,7 +211,6 @@ public class ChatClientFederate {
 	// Chat Logik
 	private void chat() throws RTIexception {
 		// 9.2 send an interaction
-		sendInteraction(); // 9.3 request a time advance and wait until we get it
 		advanceTime(1.0);
 		log("Time Advanced to " + fedamb.federateTime);
 
@@ -327,32 +303,6 @@ public class ChatClientFederate {
 		return rtiamb.registerObjectInstance(chatHandle);
 	}
 
-	/**
-	 * This method will send out an interaction of the type FoodServed.DrinkServed.
-	 * Any federates which are subscribed to it will receive a notification the next
-	 * time they tick(). This particular interaction has no parameters, so you pass
-	 * an empty map, but the process of encoding them is the same as for attributes.
-	 */
-	private void sendInteraction() throws RTIexception {
-		//////////////////////////
-		// send the interaction //
-		//////////////////////////
-		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(0);
-		// parameters.put("message", "Hallo".getBytes());
-		rtiamb.sendInteraction(messageHandle, parameters, generateTag());
-
-		// if you want to associate a particular timestamp with the
-		// interaction, you will have to supply it to the RTI. Here
-		// we send another interaction, this time with a timestamp:
-		HLAfloat64Time time = timeFactory.makeTime(fedamb.federateTime + fedamb.federateLookahead);
-		rtiamb.sendInteraction(messageHandle, parameters, generateTag(), time);
-	}
-
-	/**
-	 * This method will request a time advance to the current time, plus the given
-	 * timestep. It will then wait until a notification of the time advance grant
-	 * has been received.
-	 */
 	private void advanceTime(double timestep) throws RTIexception {
 		// request the advance
 		fedamb.isAdvancing = true;

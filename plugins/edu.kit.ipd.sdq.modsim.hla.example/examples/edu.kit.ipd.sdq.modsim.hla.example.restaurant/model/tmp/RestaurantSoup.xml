@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<objectModel>    <modelIdentification>
+<objectModel> 
+   <modelIdentification>
         <name>RestaurantSoup</name>
         <type>FOM</type>
         <version>1.0</version>

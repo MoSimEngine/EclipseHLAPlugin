@@ -12,7 +12,7 @@
  *   (that goes for your lawyer as well)
  *
  */
-package edu.kit.ipd.sdq.modsim.hla.example.chat.client;
+package edu.kit.ipd.sdq.modsim.hla.example.chat.server;
 
 import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleValueMap;
@@ -27,19 +27,16 @@ import hla.rti1516e.ParameterHandle;
 import hla.rti1516e.ParameterHandleValueMap;
 import hla.rti1516e.SynchronizationPointFailureReason;
 import hla.rti1516e.TransportationTypeHandle;
-import hla.rti1516e.encoding.DecoderException;
-import hla.rti1516e.encoding.HLAinteger16BE;
-import hla.rti1516e.encoding.HLAinteger32BE;
 import hla.rti1516e.exceptions.FederateInternalError;
 import hla.rti1516e.time.HLAfloat64Time;
 
 /**
  * This class handles all incoming callbacks from the RTI regarding a particular
- * {@link ChatClientFederate}. It will log information about any callbacks it
+ * {@link ChatServerFederate}. It will log information about any callbacks it
  * receives, thus demonstrating how to deal with the provided callback
  * information.
  */
-public class ChatClientFederateAmbassador extends NullFederateAmbassador {
+public class ChatServerFederateAmbassador extends NullFederateAmbassador {
 	// ----------------------------------------------------------
 	// STATIC VARIABLES
 	// ----------------------------------------------------------
@@ -47,7 +44,7 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	// ----------------------------------------------------------
 	// INSTANCE VARIABLES
 	// ----------------------------------------------------------
-	private ChatClientFederate federate;
+	private ChatServerFederate federate;
 
 	// these variables are accessible in the package
 	protected double federateTime = 0.0;
@@ -64,7 +61,7 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	// CONSTRUCTORS
 	// ----------------------------------------------------------
 
-	public ChatClientFederateAmbassador(ChatClientFederate federate) {
+	public ChatServerFederateAmbassador(ChatServerFederate federate) {
 		this.federate = federate;
 	}
 
@@ -73,41 +70,6 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	// ----------------------------------------------------------
 	private void log(String message) {
 		System.out.println("FederateAmbassador: " + message);
-	}
-
-	private String decodeFlavor(byte[] bytes) {
-		HLAinteger32BE value = federate.encoderFactory.createHLAinteger32BE();
-		// decode
-		try {
-			value.decode(bytes);
-		} catch (DecoderException de) {
-			return "Decoder Exception: " + de.getMessage();
-		}
-
-		switch (value.getValue()) {
-		case 101:
-			return "Cola";
-		case 102:
-			return "Orange";
-		case 103:
-			return "RootBeer";
-		case 104:
-			return "Cream";
-		default:
-			return "Unknown";
-		}
-	}
-
-	private short decodeNumCups(byte[] bytes) {
-		HLAinteger16BE value = federate.encoderFactory.createHLAinteger16BE();
-		// decode
-		try {
-			value.decode(bytes);
-			return value.getValue();
-		} catch (DecoderException de) {
-			de.printStackTrace();
-			return 0;
-		}
 	}
 
 	//////////////////////////////////////////////////////////////////////////
@@ -126,14 +88,14 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	@Override
 	public void announceSynchronizationPoint(String label, byte[] tag) {
 		log("Synchronization point announced: " + label);
-		if (label.equals(ChatClientFederate.READY_TO_RUN))
+		if (label.equals(ChatServerFederate.READY_TO_RUN))
 			this.isAnnounced = true;
 	}
 
 	@Override
 	public void federationSynchronized(String label, FederateHandleSet failed) {
 		log("Federation Synchronized: " + label);
-		if (label.equals(ChatClientFederate.READY_TO_RUN))
+		if (label.equals(ChatServerFederate.READY_TO_RUN))
 			this.isReadyToRun = true;
 	}
 
