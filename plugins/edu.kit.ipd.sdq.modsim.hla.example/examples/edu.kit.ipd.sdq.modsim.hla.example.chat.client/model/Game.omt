@@ -5,7 +5,7 @@
     <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
       <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAobjectRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
       <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Chat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Game</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Client</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
@@ -21,9 +21,9 @@
   </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
   <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactions>
     <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name notes="HLAinteractionRoot"/>
+      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name notes="HLAinteractionRoot">HLAinteractionRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
       <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Chat</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Game</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Client</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
@@ -33,6 +33,16 @@
             <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
             <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
               <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>message</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>RandomNumber</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>number</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
               <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
             </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
           </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>

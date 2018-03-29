@@ -12,7 +12,7 @@
  *   (that goes for your lawyer as well)
  *
  */
-package edu.kit.ipd.sdq.modsim.hla.example.chat.client;
+package edu.kit.ipd.sdq.modsim.hla.example.game.client;
 
 import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleValueMap;
@@ -35,11 +35,11 @@ import hla.rti1516e.time.HLAfloat64Time;
 
 /**
  * This class handles all incoming callbacks from the RTI regarding a particular
- * {@link ChatClientFederate}. It will log information about any callbacks it
+ * {@link GameClientFederate}. It will log information about any callbacks it
  * receives, thus demonstrating how to deal with the provided callback
  * information.
  */
-public class ChatClientFederateAmbassador extends NullFederateAmbassador {
+public class GameClientFederateAmbassador extends NullFederateAmbassador {
 	// ----------------------------------------------------------
 	// STATIC VARIABLES
 	// ----------------------------------------------------------
@@ -47,7 +47,7 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	// ----------------------------------------------------------
 	// INSTANCE VARIABLES
 	// ----------------------------------------------------------
-	private ChatClientFederate federate;
+	private GameClientFederate federate;
 
 	// these variables are accessible in the package
 	protected double federateTime = 0.0;
@@ -64,7 +64,7 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	// CONSTRUCTORS
 	// ----------------------------------------------------------
 
-	public ChatClientFederateAmbassador(ChatClientFederate federate) {
+	public GameClientFederateAmbassador(GameClientFederate federate) {
 		this.federate = federate;
 	}
 
@@ -126,14 +126,14 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 	@Override
 	public void announceSynchronizationPoint(String label, byte[] tag) {
 		log("Synchronization point announced: " + label);
-		if (label.equals(ChatClientFederate.READY_TO_RUN))
+		if (label.equals(GameClientFederate.READY_TO_RUN))
 			this.isAnnounced = true;
 	}
 
 	@Override
 	public void federationSynchronized(String label, FederateHandleSet failed) {
 		log("Federation Synchronized: " + label);
-		if (label.equals(ChatClientFederate.READY_TO_RUN))
+		if (label.equals(GameClientFederate.READY_TO_RUN))
 			this.isReadyToRun = true;
 	}
 
@@ -243,7 +243,7 @@ public class ChatClientFederateAmbassador extends NullFederateAmbassador {
 			builder.append(parameter);
 			// print the parameter value
 			builder.append(", paramValue=");
-			builder.append(theParameters.get(parameter).length);
+			builder.append(new String(theParameters.get(parameter)));
 			builder.append(" bytes");
 			builder.append("\n");
 		}

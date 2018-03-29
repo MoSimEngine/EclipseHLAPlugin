@@ -1,7 +1,6 @@
-package edu.kit.ipd.sdq.modsim.hla.example.chat.client;
+package edu.kit.ipd.sdq.modsim.hla.example.game.server;
 
 import java.io.File;
-import java.util.Scanner;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -10,7 +9,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-public class Main {
+public class GameServerMain {
 
 	public static void main(String[] args) {
 
@@ -22,19 +21,13 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Bitte Username eingeben: ");
-		String username = scanner.next();
-		scanner.close();
-
-		ChatClientFederate chatClientFederate = new ChatClientFederate();
+		GameServerFederate chatClientFederate = new GameServerFederate();
 		try {
-			chatClientFederate.runFederate("chat-client-" + username);
+			chatClientFederate.runFederate("RandomNumberProvider");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	public static void transform() throws TransformerException {

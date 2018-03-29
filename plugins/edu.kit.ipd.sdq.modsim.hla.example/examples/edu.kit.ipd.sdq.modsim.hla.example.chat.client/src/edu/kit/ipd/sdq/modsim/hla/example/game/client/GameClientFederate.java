@@ -12,13 +12,14 @@
  *   (that goes for your lawyer as well)
  *
  */
-package edu.kit.ipd.sdq.modsim.hla.example.chat.client;
+package edu.kit.ipd.sdq.modsim.hla.example.game.client;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Scanner;
 
 import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleSet;
@@ -26,6 +27,7 @@ import hla.rti1516e.CallbackModel;
 import hla.rti1516e.InteractionClassHandle;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
+import hla.rti1516e.ParameterHandle;
 import hla.rti1516e.ParameterHandleValueMap;
 import hla.rti1516e.RTIambassador;
 import hla.rti1516e.ResignAction;
@@ -39,7 +41,7 @@ import hla.rti1516e.time.HLAfloat64Interval;
 import hla.rti1516e.time.HLAfloat64Time;
 import hla.rti1516e.time.HLAfloat64TimeFactory;
 
-public class ChatClientFederate {
+public class GameClientFederate {
 	// ----------------------------------------------------------
 	// STATIC VARIABLES
 	// ----------------------------------------------------------
@@ -51,12 +53,12 @@ public class ChatClientFederate {
 	// INSTANCE VARIABLES
 	// ----------------------------------------------------------
 	private RTIambassador rtiamb;
-	private ChatClientFederateAmbassador fedamb; // created when we connect
+	private GameClientFederateAmbassador fedamb; // created when we connect
 	private HLAfloat64TimeFactory timeFactory; // set when we join
 	protected EncoderFactory encoderFactory; // set when we join
 
 	// caches of handle types - set once we join a federation
-	protected ObjectClassHandle chatHandle;
+	protected ObjectClassHandle gameHandle;
 	protected AttributeHandle userHandle;
 	protected InteractionClassHandle messageHandle;
 
@@ -72,12 +74,9 @@ public class ChatClientFederate {
 	 * form
 	 */
 	private void log(String message) {
-		System.out.println("ChatFederate   : " + message);
+		System.out.println("GameFederate   : " + message);
 	}
 
-	/**
-	 * This method will block until the user presses enter
-	 */
 	private void waitForUser() {
 		log(" >>>>>>>>>> Press Enter to Continue <<<<<<<<<<");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -107,7 +106,7 @@ public class ChatClientFederate {
 
 		// connect
 		log("Connecting...");
-		fedamb = new ChatClientFederateAmbassador(this);
+		fedamb = new GameClientFederateAmbassador(this);
 		rtiamb.connect(fedamb, CallbackModel.HLA_EVOKED);
 
 		//////////////////////////////
@@ -117,9 +116,9 @@ public class ChatClientFederate {
 		// We attempt to create a new federation with the first three of the
 		// restaurant FOM modules covering processes, food and drink
 		try {
-			URL[] modules = new URL[] { (new File("model/tmp/Chat.xml")).toURI().toURL() };
+			URL[] modules = new URL[] { (new File("model/tmp/Game.xml")).toURI().toURL() };
 
-			rtiamb.createFederationExecution("ChatFederation", modules);
+			rtiamb.createFederationExecution("GameFederation", modules);
 			log("Created Federation");
 		} catch (FederationExecutionAlreadyExists exists) {
 			log("Didn't create federation, it already existed");
@@ -132,11 +131,11 @@ public class ChatClientFederate {
 		////////////////////////////
 		// 4. join the federation //
 		////////////////////////////
-		URL[] joinModules = new URL[] { (new File("model/tmp/Chat.xml")).toURI().toURL() };
+		URL[] joinModules = new URL[] { (new File("model/tmp/Game.xml")).toURI().toURL() };
 
 		rtiamb.joinFederationExecution(federateName, // name for the federate
-				"ChatFederation", // federate type
-				"ChatFederation", // name of federation
+				"GameFederation", // federate type
+				"GameFederation", // name of federation
 				joinModules); // modules we want to add
 
 		log("Joined Federation as " + federateName);
@@ -156,10 +155,6 @@ public class ChatClientFederate {
 			rtiamb.evokeMultipleCallbacks(0.1, 0.2);
 		}
 
-		// WAIT FOR USER TO KICK US OFF
-		// So that there is time to add other federates, we will wait until the
-		// user hits enter before proceeding. That was, you have time to start
-		// other federates.
 		waitForUser();
 
 		///////////////////////////////////////////////////////
@@ -222,7 +217,7 @@ public class ChatClientFederate {
 		// NOTE: we won't die if we can't do this because other federates
 		// remain. in that case we'll leave it for them to clean up
 		try {
-			rtiamb.destroyFederationExecution("ChatFederation");
+			rtiamb.destroyFederationExecution("GameFederation");
 			log("Destroyed Federation");
 		} catch (FederationExecutionDoesNotExist dne) {
 			log("No need to destroy federation, it doesn't exist");
@@ -233,11 +228,21 @@ public class ChatClientFederate {
 
 	// Chat Logik
 	private void chat() throws RTIexception {
-		// 9.2 send an interaction
-		sendInteraction(); // 9.3 request a time advance and wait until we get it
-		advanceTime(1.0);
-		log("Time Advanced to " + fedamb.federateTime);
 
+		Scanner scanner = new Scanner(System.in);
+
+		for (int i = 0; i < 20; i++) {
+
+			System.out.print("Nummer eingeben: ");
+			String message = scanner.next();
+
+			sendMessage(message); // 9.3 request a time advance and wait until we get it
+			advanceTime(1.0);
+			// 9.2 send an interaction
+			log("Time Advanced to " + fedamb.federateTime);
+		}
+
+		scanner.close();
 	}
 
 	////////////////////////////////////////////////////////////////////////////
@@ -282,21 +287,21 @@ public class ChatClientFederate {
 	 */
 	private void publishAndSubscribe() throws RTIexception {
 		// get all the handle information for the attributes of Food.Drink.Soda
-		this.chatHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.Chat.Client.User");
-		this.userHandle = rtiamb.getAttributeHandle(chatHandle, "NumberOfUsers");
+		this.gameHandle = rtiamb.getObjectClassHandle("HLAobjectRoot.Game.Client.User");
+		this.userHandle = rtiamb.getAttributeHandle(gameHandle, "NumberOfUsers");
 		// package the information into a handle set
 		AttributeHandleSet attributes = rtiamb.getAttributeHandleSetFactory().create();
 		attributes.add(userHandle);
 
 		// do the actual publication
-		rtiamb.publishObjectClassAttributes(chatHandle, attributes);
+		rtiamb.publishObjectClassAttributes(gameHandle, attributes);
 
 		////////////////////////////////////////////////////
 		// subscribe to all attributes of Food.Drink.Soda //
 		////////////////////////////////////////////////////
 		// we also want to hear about the same sort of information as it is
 		// created and altered in other federates, so we need to subscribe to it
-		rtiamb.subscribeObjectClassAttributes(chatHandle, attributes);
+		rtiamb.subscribeObjectClassAttributes(gameHandle, attributes);
 
 		//////////////////////////////////////////////////////////
 		// publish the interaction class FoodServed.DrinkServed //
@@ -304,7 +309,7 @@ public class ChatClientFederate {
 		// we want to send interactions of type FoodServed.DrinkServed, so we need
 		// to tell the RTI that we're publishing it first. We don't need to
 		// inform it of the parameters, only the class, making it much simpler
-		String iname = "HLAinteractionRoot.Chat.Client.MessageSent";
+		String iname = "HLAinteractionRoot.Game.Client.MessageSent";
 		messageHandle = rtiamb.getInteractionClassHandle(iname);
 
 		// do the publication
@@ -324,7 +329,7 @@ public class ChatClientFederate {
 	 * will update the attribute values for this instance
 	 */
 	private ObjectInstanceHandle registerObject() throws RTIexception {
-		return rtiamb.registerObjectInstance(chatHandle);
+		return rtiamb.registerObjectInstance(gameHandle);
 	}
 
 	/**
@@ -333,13 +338,15 @@ public class ChatClientFederate {
 	 * time they tick(). This particular interaction has no parameters, so you pass
 	 * an empty map, but the process of encoding them is the same as for attributes.
 	 */
-	private void sendInteraction() throws RTIexception {
+	private void sendMessage(String message) throws RTIexception {
 		//////////////////////////
 		// send the interaction //
 		//////////////////////////
+
 		ParameterHandleValueMap parameters = rtiamb.getParameterHandleValueMapFactory().create(0);
-		// parameters.put("message", "Hallo".getBytes());
-		rtiamb.sendInteraction(messageHandle, parameters, generateTag());
+		ParameterHandle parameterHandle = rtiamb.getParameterHandle(messageHandle, "message");
+		parameters.put(parameterHandle, message.getBytes());
+		// rtiamb.sendInteraction(messageHandle, parameters, generateTag());
 
 		// if you want to associate a particular timestamp with the
 		// interaction, you will have to supply it to the RTI. Here
