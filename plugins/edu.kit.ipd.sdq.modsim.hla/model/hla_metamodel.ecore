@@ -14781,8 +14781,4 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="rtiapi" nsURI="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/rtiapi"
-      nsPrefix="edu.kit.ipd.sdq.modsim.hla.ieee1516.rtiapi">
-    <eClassifiers xsi:type="ecore:EClass" name="Federate"/>
-  </eSubpackages>
 </ecore:EPackage>
