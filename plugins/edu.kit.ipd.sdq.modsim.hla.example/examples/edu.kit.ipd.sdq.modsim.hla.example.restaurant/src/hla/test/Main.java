@@ -39,12 +39,12 @@ public class Main {
 
 	public static void main(String[] args) {
 
-//		try {
-//			transform();
-//		} catch (TransformerException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			transform();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		// get a federate name, use "exampleFederate" as default
 		String federateName = "exampleFederate";
