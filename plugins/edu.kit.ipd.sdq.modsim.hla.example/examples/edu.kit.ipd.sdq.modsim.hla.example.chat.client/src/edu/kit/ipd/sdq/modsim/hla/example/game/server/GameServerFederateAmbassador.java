@@ -75,41 +75,6 @@ public class GameServerFederateAmbassador extends NullFederateAmbassador {
 		System.out.println("FederateAmbassador: " + message);
 	}
 
-	private String decodeFlavor(byte[] bytes) {
-		HLAinteger32BE value = federate.encoderFactory.createHLAinteger32BE();
-		// decode
-		try {
-			value.decode(bytes);
-		} catch (DecoderException de) {
-			return "Decoder Exception: " + de.getMessage();
-		}
-
-		switch (value.getValue()) {
-		case 101:
-			return "Cola";
-		case 102:
-			return "Orange";
-		case 103:
-			return "RootBeer";
-		case 104:
-			return "Cream";
-		default:
-			return "Unknown";
-		}
-	}
-
-	private short decodeNumCups(byte[] bytes) {
-		HLAinteger16BE value = federate.encoderFactory.createHLAinteger16BE();
-		// decode
-		try {
-			value.decode(bytes);
-			return value.getValue();
-		} catch (DecoderException de) {
-			de.printStackTrace();
-			return 0;
-		}
-	}
-
 	//////////////////////////////////////////////////////////////////////////
 	////////////////////////// RTI Callback Methods //////////////////////////
 	//////////////////////////////////////////////////////////////////////////
