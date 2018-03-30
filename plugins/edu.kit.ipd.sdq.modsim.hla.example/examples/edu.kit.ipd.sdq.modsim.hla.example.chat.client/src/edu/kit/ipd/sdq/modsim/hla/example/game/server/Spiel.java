@@ -3,28 +3,31 @@ package edu.kit.ipd.sdq.modsim.hla.example.game.server;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Spiel {
 
-	private List<Integer> gewinnZahlen;
-	private List<List<Spieler>> tippsDerSpieler;
+	private Map<Integer, Integer> gewinnZahlen;
+	private Map<Integer, List<Spieler>> tippsDerSpieler;
 
 	public Spiel() {
-		gewinnZahlen = new ArrayList<Integer>();
-		tippsDerSpieler = new ArrayList<List<Spieler>>();
+		gewinnZahlen = new HashMap<Integer, Integer>();
+		tippsDerSpieler = new HashMap<Integer, List<Spieler>>();
 	}
 
 	public void fuegeGewinnZahlHinzu(int runde, int zahl) {
-		gewinnZahlen.add(runde, zahl);
+		gewinnZahlen.put(runde, zahl);
 	}
 
 	public void fuegeGetippteZahlHinzu(int runde, String spieler, int zahl) {
+
 		List<Spieler> list = tippsDerSpieler.get(runde);
 
 		if (list == null) {
 			list = new ArrayList<Spieler>();
-			tippsDerSpieler.add(runde, list);
+			tippsDerSpieler.put(runde, list);
 		}
 
 		list.add(new Spieler(spieler, zahl));
@@ -43,9 +46,9 @@ public class Spiel {
 				int abstand2 = gewinnZahlRunde - sp2.getGetippteZahl();
 
 				if (abstand1 < abstand2) {
-					return -1;
-				} else if (abstand2 > abstand1) {
 					return 1;
+				} else if (abstand2 > abstand1) {
+					return -1;
 				}
 
 				return 0;
@@ -53,7 +56,6 @@ public class Spiel {
 		});
 
 		return getippteZahlenRunde.get(0).getId();
-
 	}
 
 }

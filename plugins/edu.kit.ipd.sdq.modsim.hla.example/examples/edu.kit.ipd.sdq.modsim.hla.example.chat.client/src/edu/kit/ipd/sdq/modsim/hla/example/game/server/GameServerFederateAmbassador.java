@@ -162,8 +162,7 @@ public class GameServerFederateAmbassador extends NullFederateAmbassador {
 		int runde = new Double(((HLAfloat64Time) time).getValue()).intValue();
 
 		if (interactionClass.equals(federate.randomNumberHandle)) {
-			federate.spiel.fuegeGewinnZahlHinzu(runde,
-					new Integer(new String(theParameters.get(federate.numberHandle))));
+			federate.spiel.fuegeGewinnZahlHinzu(runde, new Integer(new String(theParameters.get(federate.parameterHandle))));
 
 		} else if (interactionClass.equals(federate.numberEnteredHandle)) {
 			federate.spiel.fuegeGetippteZahlHinzu(runde, new String(theParameters.get(federate.gameridHandle)),

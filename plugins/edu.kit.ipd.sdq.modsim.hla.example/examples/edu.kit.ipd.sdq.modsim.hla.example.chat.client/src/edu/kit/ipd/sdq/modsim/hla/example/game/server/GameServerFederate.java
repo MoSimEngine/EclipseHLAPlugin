@@ -220,7 +220,7 @@ public class GameServerFederate {
 			log("Time Advanced to " + fedamb.federateTime);
 		}
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 1; i < 6; i++) {
 			String gewinnerDerRunde = spiel.gewinnerDerRunde(i);
 			log("Gewinner der Runde " + i + " ist der Spieler: " + gewinnerDerRunde);
 

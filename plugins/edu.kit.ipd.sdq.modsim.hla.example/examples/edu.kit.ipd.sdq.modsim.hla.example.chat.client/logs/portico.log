@@ -1,1 +1,3 @@
-ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=GameFederation
+ERROR [Regular] portico.lrc.jgroups: Member [d22abb07-2e47-4b21-ab49-81fa53750362] apparently deERROR [Regular] portico.lrc.jgroups: Member [d22abb07-2e47-4b21-ab49-81fa5375036ERROR [main] portico.lrc.jgroups: FAILURE destoryFederation [GameFederation]: doesn't exist
+...
+ERROR [main] portico.lrc.jgroups: FAILURE destoryFederation [ChatFederation]: doesn't exist
