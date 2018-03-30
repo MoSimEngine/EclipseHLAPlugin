@@ -21,9 +21,9 @@ public class RandomNumberProviderMain {
 			e.printStackTrace();
 		}
 
-		RandomNumberProviderFederate chatClientFederate = new RandomNumberProviderFederate();
+		RandomNumberProviderFederate randomNumberProviderFederate = new RandomNumberProviderFederate();
 		try {
-			chatClientFederate.runFederate("RandomNumberProvider");
+			randomNumberProviderFederate.runFederate("RandomNumberProvider");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,7 +35,7 @@ public class RandomNumberProviderMain {
 		Source xslt = new StreamSource(new File("model/transform_omt_to_fomxml.xslt"));
 		Transformer transformer = factory.newTransformer(xslt);
 
-		Source text = new StreamSource(new File("model/Chat.omt"));
-		transformer.transform(text, new StreamResult(new File("model/tmp/Chat.xml")));
+		Source text = new StreamSource(new File("model/Game.omt"));
+		transformer.transform(text, new StreamResult(new File("model/tmp/Game.xml")));
 	}
 }

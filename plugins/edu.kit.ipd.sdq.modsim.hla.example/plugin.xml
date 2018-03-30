@@ -29,9 +29,10 @@
                contentURI="examples/edu.kit.ipd.sdq.modsim.hla.example.restaurant/"
                description="Restaurant Beispiel"/>
          <projectDescriptor
-               name="edu.kit.ipd.sdq.modsim.hla.example.chat"
-               contentURI="examples/edu.kit.ipd.sdq.modsim.hla.example.chat/"
-               description="Chat Beispiel"/>
+               name="edu.kit.ipd.sdq.modsim.hla.example.game"
+               contentURI="examples/edu.kit.ipd.sdq.modsim.hla.example.game/"
+               description="Zahlen Ratespiel: Es können mehere Client-Federates gestartet werden, diese Tippen jeweils immer in mehreren Runden.
+                Die RandomNumberProviderFederate generiert eine zufällige Zahl. Die Server Federate wertet das Spiel am Ende aus."/>
       </example>
       
      

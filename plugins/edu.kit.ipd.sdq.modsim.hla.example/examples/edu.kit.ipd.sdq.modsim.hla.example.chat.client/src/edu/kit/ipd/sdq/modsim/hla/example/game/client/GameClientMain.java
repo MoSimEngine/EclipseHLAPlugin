@@ -29,7 +29,7 @@ public class GameClientMain {
 
 		GameClientFederate chatClientFederate = new GameClientFederate();
 		try {
-			chatClientFederate.runFederate("chat-client-" + username);
+			chatClientFederate.runFederate(username);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class GameClientMain {
 		Source xslt = new StreamSource(new File("model/transform_omt_to_fomxml.xslt"));
 		Transformer transformer = factory.newTransformer(xslt);
 
-		Source text = new StreamSource(new File("model/Chat.omt"));
-		transformer.transform(text, new StreamResult(new File("model/tmp/Chat.xml")));
+		Source text = new StreamSource(new File("model/Game.omt"));
+		transformer.transform(text, new StreamResult(new File("model/tmp/Game.xml")));
 	}
 }

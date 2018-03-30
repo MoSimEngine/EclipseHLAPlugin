@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectModel xmlns:edu.kit.ipd.sdq.modsim.hla.ieee1516.omt="http://kit.edu/ipd/sdq/modsim/hla/ieee1516/omt">
   <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:modelIdentification/>
-  <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
-    <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>HLAobjectRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-      <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Game</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-        <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Client</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-          <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>User</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>NumberOfUsers</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAinteger32BE</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
-            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:attribute>
-          </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-        </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-      </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-    </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objectClass>
-  </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:objects>
   <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactions>
     <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
       <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name notes="HLAinteractionRoot">HLAinteractionRoot</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
@@ -27,12 +9,16 @@
         <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>Client</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
           <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>
-            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>MessageSent</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>NumberEntered</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
             <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>PublishSubscribe</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:sharing>
             <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>HLAreliable</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:transportation>
             <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>TimeStamp</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:order>
             <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
-              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>message</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>number</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
+            </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+            <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
+              <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>gamerid</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:name>
               <edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>HLAASCIIstring</edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:dataType>
             </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:parameter>
           </edu.kit.ipd.sdq.modsim.hla.ieee1516.omt:interactionClass>

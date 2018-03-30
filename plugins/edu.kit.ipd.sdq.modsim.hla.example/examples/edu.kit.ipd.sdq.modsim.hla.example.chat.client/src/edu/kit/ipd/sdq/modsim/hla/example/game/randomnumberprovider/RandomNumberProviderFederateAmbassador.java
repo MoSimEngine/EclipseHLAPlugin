@@ -14,7 +14,6 @@
  */
 package edu.kit.ipd.sdq.modsim.hla.example.game.randomnumberprovider;
 
-import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleValueMap;
 import hla.rti1516e.FederateHandleSet;
 import hla.rti1516e.InteractionClassHandle;
@@ -23,21 +22,17 @@ import hla.rti1516e.NullFederateAmbassador;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
 import hla.rti1516e.OrderType;
-import hla.rti1516e.ParameterHandle;
 import hla.rti1516e.ParameterHandleValueMap;
 import hla.rti1516e.SynchronizationPointFailureReason;
 import hla.rti1516e.TransportationTypeHandle;
-import hla.rti1516e.encoding.DecoderException;
-import hla.rti1516e.encoding.HLAinteger16BE;
-import hla.rti1516e.encoding.HLAinteger32BE;
 import hla.rti1516e.exceptions.FederateInternalError;
 import hla.rti1516e.time.HLAfloat64Time;
 
 /**
  * This class handles all incoming callbacks from the RTI regarding a particular
- * {@link RandomNumberProviderFederate}. It will log information about any callbacks it
- * receives, thus demonstrating how to deal with the provided callback
- * information.
+ * {@link RandomNumberProviderFederate}. It will log information about any
+ * callbacks it receives, thus demonstrating how to deal with the provided
+ * callback information.
  */
 public class RandomNumberProviderFederateAmbassador extends NullFederateAmbassador {
 	// ----------------------------------------------------------
@@ -73,41 +68,6 @@ public class RandomNumberProviderFederateAmbassador extends NullFederateAmbassad
 	// ----------------------------------------------------------
 	private void log(String message) {
 		System.out.println("FederateAmbassador: " + message);
-	}
-
-	private String decodeFlavor(byte[] bytes) {
-		HLAinteger32BE value = federate.encoderFactory.createHLAinteger32BE();
-		// decode
-		try {
-			value.decode(bytes);
-		} catch (DecoderException de) {
-			return "Decoder Exception: " + de.getMessage();
-		}
-
-		switch (value.getValue()) {
-		case 101:
-			return "Cola";
-		case 102:
-			return "Orange";
-		case 103:
-			return "RootBeer";
-		case 104:
-			return "Cream";
-		default:
-			return "Unknown";
-		}
-	}
-
-	private short decodeNumCups(byte[] bytes) {
-		HLAinteger16BE value = federate.encoderFactory.createHLAinteger16BE();
-		// decode
-		try {
-			value.decode(bytes);
-			return value.getValue();
-		} catch (DecoderException de) {
-			de.printStackTrace();
-			return 0;
-		}
 	}
 
 	//////////////////////////////////////////////////////////////////////////
@@ -178,29 +138,8 @@ public class RandomNumberProviderFederateAmbassador extends NullFederateAmbassad
 	public void reflectAttributeValues(ObjectInstanceHandle theObject, AttributeHandleValueMap theAttributes,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReflectInfo reflectInfo) throws FederateInternalError {
-		StringBuilder builder = new StringBuilder("Reflection for object:");
 
-		// print the handle
-		builder.append(" handle=" + theObject);
-		// print the tag
-		builder.append(", tag=" + new String(tag));
-		// print the time (if we have it) we'll get null if we are just receiving
-		// a forwarded call from the other reflect callback above
-		if (time != null) {
-			builder.append(", time=" + ((HLAfloat64Time) time).getValue());
-		}
-
-		// print the attribute information
-		builder.append(", attributeCount=" + theAttributes.size());
-		builder.append("\n");
-		for (AttributeHandle attributeHandle : theAttributes.keySet()) {
-			// print the attibute handle
-			builder.append("\tattributeHandle=");
-
-			builder.append("\n");
-		}
-
-		log(builder.toString());
+		log("Diese Federate unterstützt keine Objekte bzw. Attribute.");
 	}
 
 	@Override
@@ -218,37 +157,8 @@ public class RandomNumberProviderFederateAmbassador extends NullFederateAmbassad
 	public void receiveInteraction(InteractionClassHandle interactionClass, ParameterHandleValueMap theParameters,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
-		StringBuilder builder = new StringBuilder("Interaction Received:");
 
-		// print the handle
-		builder.append(" handle=" + interactionClass);
-		if (interactionClass.equals(federate.messageHandle)) {
-			builder.append(" (DrinkServed)");
-		}
-
-		// print the tag
-		builder.append(", tag=" + new String(tag));
-		// print the time (if we have it) we'll get null if we are just receiving
-		// a forwarded call from the other reflect callback above
-		if (time != null) {
-			builder.append(", time=" + ((HLAfloat64Time) time).getValue());
-		}
-
-		// print the parameer information
-		builder.append(", parameterCount=" + theParameters.size());
-		builder.append("\n");
-		for (ParameterHandle parameter : theParameters.keySet()) {
-			// print the parameter handle
-			builder.append("\tparamHandle=");
-			builder.append(parameter);
-			// print the parameter value
-			builder.append(", paramValue=");
-			builder.append(new String(theParameters.get(parameter)));
-			builder.append(" bytes");
-			builder.append("\n");
-		}
-
-		log(builder.toString());
+		log("Diese Federate muss keine Interaktion empfangen.");
 	}
 
 	@Override
@@ -257,7 +167,4 @@ public class RandomNumberProviderFederateAmbassador extends NullFederateAmbassad
 		log("Object Removed: handle=" + theObject);
 	}
 
-	// ----------------------------------------------------------
-	// STATIC METHODS
-	// ----------------------------------------------------------
 }

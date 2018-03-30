@@ -2,44 +2,57 @@ package edu.kit.ipd.sdq.modsim.hla.example.game.server;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Spiel {
 
 	private List<Integer> gewinnZahlen;
-	private List<List<Integer>> getippteZahlen;
+	private List<List<Spieler>> tippsDerSpieler;
 
 	public Spiel() {
 		gewinnZahlen = new ArrayList<Integer>();
-		getippteZahlen = new ArrayList<List<Integer>>();
+		tippsDerSpieler = new ArrayList<List<Spieler>>();
 	}
 
 	public void fuegeGewinnZahlHinzu(int runde, int zahl) {
 		gewinnZahlen.add(runde, zahl);
 	}
 
-	public void fuegeGetippteZahlHinzu(int runde, int spieler, int zahl) {
-		List<Integer> list = getippteZahlen.get(runde);
+	public void fuegeGetippteZahlHinzu(int runde, String spieler, int zahl) {
+		List<Spieler> list = tippsDerSpieler.get(runde);
 
 		if (list == null) {
-			list = new ArrayList<Integer>();
-			getippteZahlen.add(runde, list);
+			list = new ArrayList<Spieler>();
+			tippsDerSpieler.add(runde, list);
 		}
-		list.add(spieler, zahl);
+
+		list.add(new Spieler(spieler, zahl));
 	}
 
-	public int gewinnerDerRunde(int runde) {
+	public String gewinnerDerRunde(int runde) {
 		Integer gewinnZahlRunde = gewinnZahlen.get(runde);
-		List<Integer> getippteZahlenRunde = getippteZahlen.get(runde);
+		List<Spieler> getippteZahlenRunde = tippsDerSpieler.get(runde);
 
-		Integer[] gewinner = new Integer[getippteZahlenRunde.size()];
+		Collections.sort(getippteZahlenRunde, new Comparator<Spieler>() {
 
-		for (int i = 0; i < getippteZahlenRunde.size(); i++) {
-			Integer integer = getippteZahlenRunde.get(i);
+			@Override
+			public int compare(Spieler sp1, Spieler sp2) {
 
-		}
+				int abstand1 = gewinnZahlRunde - sp1.getGetippteZahl();
+				int abstand2 = gewinnZahlRunde - sp2.getGetippteZahl();
 
-		return gewinner[0];
+				if (abstand1 < abstand2) {
+					return -1;
+				} else if (abstand2 > abstand1) {
+					return 1;
+				}
+
+				return 0;
+			}
+		});
+
+		return getippteZahlenRunde.get(0).getId();
 
 	}
 

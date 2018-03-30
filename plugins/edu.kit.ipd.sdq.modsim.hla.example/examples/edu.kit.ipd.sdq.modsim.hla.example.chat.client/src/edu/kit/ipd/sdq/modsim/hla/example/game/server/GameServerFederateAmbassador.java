@@ -14,7 +14,6 @@
  */
 package edu.kit.ipd.sdq.modsim.hla.example.game.server;
 
-import hla.rti1516e.AttributeHandle;
 import hla.rti1516e.AttributeHandleValueMap;
 import hla.rti1516e.FederateHandleSet;
 import hla.rti1516e.InteractionClassHandle;
@@ -23,13 +22,9 @@ import hla.rti1516e.NullFederateAmbassador;
 import hla.rti1516e.ObjectClassHandle;
 import hla.rti1516e.ObjectInstanceHandle;
 import hla.rti1516e.OrderType;
-import hla.rti1516e.ParameterHandle;
 import hla.rti1516e.ParameterHandleValueMap;
 import hla.rti1516e.SynchronizationPointFailureReason;
 import hla.rti1516e.TransportationTypeHandle;
-import hla.rti1516e.encoding.DecoderException;
-import hla.rti1516e.encoding.HLAinteger16BE;
-import hla.rti1516e.encoding.HLAinteger32BE;
 import hla.rti1516e.exceptions.FederateInternalError;
 import hla.rti1516e.time.HLAfloat64Time;
 
@@ -66,6 +61,7 @@ public class GameServerFederateAmbassador extends NullFederateAmbassador {
 
 	public GameServerFederateAmbassador(GameServerFederate federate) {
 		this.federate = federate;
+		this.federate.spiel = new Spiel();
 	}
 
 	// ----------------------------------------------------------
@@ -143,29 +139,8 @@ public class GameServerFederateAmbassador extends NullFederateAmbassador {
 	public void reflectAttributeValues(ObjectInstanceHandle theObject, AttributeHandleValueMap theAttributes,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReflectInfo reflectInfo) throws FederateInternalError {
-		StringBuilder builder = new StringBuilder("Reflection for object:");
 
-		// print the handle
-		builder.append(" handle=" + theObject);
-		// print the tag
-		builder.append(", tag=" + new String(tag));
-		// print the time (if we have it) we'll get null if we are just receiving
-		// a forwarded call from the other reflect callback above
-		if (time != null) {
-			builder.append(", time=" + ((HLAfloat64Time) time).getValue());
-		}
-
-		// print the attribute information
-		builder.append(", attributeCount=" + theAttributes.size());
-		builder.append("\n");
-		for (AttributeHandle attributeHandle : theAttributes.keySet()) {
-			// print the attibute handle
-			builder.append("\tattributeHandle=");
-
-			builder.append("\n");
-		}
-
-		log(builder.toString());
+		log("Diese Federate unterstützt keine Objekte bzw. Attribute.");
 	}
 
 	@Override
@@ -183,37 +158,17 @@ public class GameServerFederateAmbassador extends NullFederateAmbassador {
 	public void receiveInteraction(InteractionClassHandle interactionClass, ParameterHandleValueMap theParameters,
 			byte[] tag, OrderType sentOrdering, TransportationTypeHandle theTransport, LogicalTime time,
 			OrderType receivedOrdering, SupplementalReceiveInfo receiveInfo) throws FederateInternalError {
-		StringBuilder builder = new StringBuilder("Interaction Received:");
 
-		// print the handle
-		builder.append(" handle=" + interactionClass);
-		if (interactionClass.equals(federate.messageHandle)) {
-			builder.append(" (DrinkServed)");
+		int runde = new Double(((HLAfloat64Time) time).getValue()).intValue();
+
+		if (interactionClass.equals(federate.randomNumberHandle)) {
+			federate.spiel.fuegeGewinnZahlHinzu(runde,
+					new Integer(new String(theParameters.get(federate.numberHandle))));
+
+		} else if (interactionClass.equals(federate.numberEnteredHandle)) {
+			federate.spiel.fuegeGetippteZahlHinzu(runde, new String(theParameters.get(federate.gameridHandle)),
+					new Integer(new String(theParameters.get(federate.numberHandle))));
 		}
-
-		// print the tag
-		builder.append(", tag=" + new String(tag));
-		// print the time (if we have it) we'll get null if we are just receiving
-		// a forwarded call from the other reflect callback above
-		if (time != null) {
-			builder.append(", time=" + ((HLAfloat64Time) time).getValue());
-		}
-
-		// print the parameer information
-		builder.append(", parameterCount=" + theParameters.size());
-		builder.append("\n");
-		for (ParameterHandle parameter : theParameters.keySet()) {
-			// print the parameter handle
-			builder.append("\tparamHandle=");
-			builder.append(parameter);
-			// print the parameter value
-			builder.append(", paramValue=");
-			builder.append(new String(theParameters.get(parameter)));
-			builder.append(" bytes");
-			builder.append("\n");
-		}
-
-		log(builder.toString());
 	}
 
 	@Override

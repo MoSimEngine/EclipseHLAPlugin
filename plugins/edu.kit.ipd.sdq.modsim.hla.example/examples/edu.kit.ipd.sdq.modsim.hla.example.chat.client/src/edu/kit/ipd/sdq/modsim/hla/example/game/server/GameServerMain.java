@@ -23,7 +23,7 @@ public class GameServerMain {
 
 		GameServerFederate chatClientFederate = new GameServerFederate();
 		try {
-			chatClientFederate.runFederate("RandomNumberProvider");
+			chatClientFederate.runFederate("GameServer");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,7 +35,7 @@ public class GameServerMain {
 		Source xslt = new StreamSource(new File("model/transform_omt_to_fomxml.xslt"));
 		Transformer transformer = factory.newTransformer(xslt);
 
-		Source text = new StreamSource(new File("model/Chat.omt"));
-		transformer.transform(text, new StreamResult(new File("model/tmp/Chat.xml")));
+		Source text = new StreamSource(new File("model/Game.omt"));
+		transformer.transform(text, new StreamResult(new File("model/tmp/Game.xml")));
 	}
 }
