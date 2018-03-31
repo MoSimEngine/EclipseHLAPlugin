@@ -10,14 +10,6 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 public class Main {
-	// public static void main(String[] args) {
-	//
-	// Federate federate = new EMFModelLoad().load();
-	//
-	// federate.setHLAFederateAmbassador(new NullFederateAmbassador());
-	//
-	// System.out.println("Out");
-	// }
 
 	private static void transform() throws TransformerException {
 		TransformerFactory factory = TransformerFactory.newInstance();
@@ -46,7 +38,6 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		// get a federate name, use "exampleFederate" as default
 		String federateName = "exampleFederate";
 		if (args.length != 0) {
 			federateName = args[0];
