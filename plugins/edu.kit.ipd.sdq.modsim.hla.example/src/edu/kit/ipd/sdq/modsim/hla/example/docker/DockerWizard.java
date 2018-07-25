@@ -1,9 +1,14 @@
 package edu.kit.ipd.sdq.modsim.hla.example.docker;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.eclipse.emf.common.ui.CommonUIPlugin;
 import org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -38,7 +43,38 @@ public class DockerWizard extends ExampleInstallerWizard {
 			
 			dockerRTIRadioButton = new Button(dockerGroup, SWT.RADIO);
 			dockerRTIRadioButton.setText("Docker Portico container RTI engine");
+			dockerRTIRadioButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					Button source = (Button)e.getSource();
+					if(source.getSelection()) {
+						dockerCLIInstalled();
+					}
+				}
+			});
 			
+		}
+		
+		private boolean dockerCLIInstalled(){
+			String OS = System.getProperty("os.name").toLowerCase();
+			ProcessBuilder checkDockerPB;
+			
+			if(OS.startsWith("windows")) {
+				checkDockerPB = new ProcessBuilder("CMD", "/C", "docker");
+			} else {
+				checkDockerPB = new ProcessBuilder("bash", "-cl", "docker");
+			}
+			try {
+				checkDockerPB
+					.inheritIO()
+					.directory(new File(System.getProperty("user.home")))
+					.start();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return false;
 		}
 	}
 	
