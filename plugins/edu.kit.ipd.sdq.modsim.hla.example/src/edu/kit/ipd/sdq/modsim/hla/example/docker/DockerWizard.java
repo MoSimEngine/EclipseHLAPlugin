@@ -48,7 +48,15 @@ public class DockerWizard extends ExampleInstallerWizard {
 				public void widgetSelected(SelectionEvent e) {
 					Button source = (Button)e.getSource();
 					if(source.getSelection()) {
-						dockerCLIInstalled();
+						if(dockerCLIInstalled()) {
+							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": installed!");
+							//dockerRTIRadioButton.setImage(new Image(null, "../image92-check.png"));
+							dockerRTIRadioButton.getParent().layout();
+						} else {
+							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": not found, please install Docker CLI!");
+							//dockerRTIRadioButton.setImage(new Image(null, "../remove.png"));
+							dockerRTIRadioButton.getParent().layout();
+						}
 					}
 				}
 			});
@@ -70,11 +78,10 @@ public class DockerWizard extends ExampleInstallerWizard {
 					.directory(new File(System.getProperty("user.home")))
 					.start();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				return false;
 			}
-			
-			return false;
+			return true;
 		}
 	}
 	
