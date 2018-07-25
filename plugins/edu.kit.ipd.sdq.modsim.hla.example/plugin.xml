@@ -10,7 +10,7 @@
       <wizard
             id="edu.kit.ipd.sdq.modsim.hla.exampleWizard"
             name="HLA Examples"
-            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            class="edu.kit.ipd.sdq.modsim.hla.example.docker.DockerWizard"
             category="org.eclipse.ui.Examples/edu.kit.ipd.sdq.modsim.hla.example"
             project="true"
             icon="icons/full/ctool16/NewEMFExample.gif">
@@ -29,10 +29,9 @@
                contentURI="examples/edu.kit.ipd.sdq.modsim.hla.example.restaurant/"
                description="Restaurant Beispiel"/>
          <projectDescriptor
-               name="edu.kit.ipd.sdq.modsim.hla.example.game"
                contentURI="examples/edu.kit.ipd.sdq.modsim.hla.example.game/"
-               description="Zahlen Ratespiel: Es können mehere Client-Federates gestartet werden, diese Tippen jeweils immer in mehreren Runden.
-                Die RandomNumberProviderFederate generiert eine zufällige Zahl. Die Server Federate wertet das Spiel am Ende aus."/>
+               description="Game"
+               name="edu.kit.ipd.sdq.modsim.hla.example.game"/>
       </example>
       
      
