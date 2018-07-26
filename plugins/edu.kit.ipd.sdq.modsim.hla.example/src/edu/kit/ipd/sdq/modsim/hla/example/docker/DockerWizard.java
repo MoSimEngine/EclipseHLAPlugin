@@ -1,7 +1,12 @@
 package edu.kit.ipd.sdq.modsim.hla.example.docker;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 
 import org.eclipse.emf.common.ui.CommonUIPlugin;
 import org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard;
@@ -83,6 +88,22 @@ public class DockerWizard extends ExampleInstallerWizard {
 				return false;
 			}
 			return true;
+		}
+		
+		private boolean installDocker() {
+			URL url;
+	        try {
+	        	url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
+	        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
+		        FileOutputStream fos = new FileOutputStream("dockerInstall.dmg");
+				fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+				fos.close();
+		        rbc.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return false;
 		}
 	}
 	
