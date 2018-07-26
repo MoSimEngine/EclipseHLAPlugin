@@ -27,6 +27,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		
 		protected Button localRTIRadioButton;
 		protected Button dockerRTIRadioButton;
+		protected Button installDockerButton;
 		private String hostOS;
 
 		public DockerProjectPage(String pageName, String title, ImageDescriptor titleImage) {
@@ -61,11 +62,23 @@ public class DockerWizard extends ExampleInstallerWizard {
 						} else {
 							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": not found, please install Docker CLI!");
 							//dockerRTIRadioButton.setImage(new Image(null, "../remove.png"));
+							installDockerButton.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
+							
 						}
 					}
 				}
 			});
+			
+			installDockerButton = new Button(dockerGroup, SWT.PUSH);
+			installDockerButton.setText("Install Docker");
+			installDockerButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					installDocker();
+				}
+			});
+			installDockerButton.setVisible(false);
 			
 		}
 		
