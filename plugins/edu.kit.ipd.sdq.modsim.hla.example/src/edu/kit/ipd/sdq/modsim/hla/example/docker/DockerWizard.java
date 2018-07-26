@@ -22,6 +22,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		
 		protected Button localRTIRadioButton;
 		protected Button dockerRTIRadioButton;
+		private String hostOS;
 
 		public DockerProjectPage(String pageName, String title, ImageDescriptor titleImage) {
 			super(pageName, title, titleImage);
@@ -64,10 +65,10 @@ public class DockerWizard extends ExampleInstallerWizard {
 		}
 		
 		private boolean dockerCLIInstalled(){
-			String OS = System.getProperty("os.name").toLowerCase();
+			hostOS = System.getProperty("os.name").toLowerCase();
 			ProcessBuilder checkDockerPB;
 			
-			if(OS.startsWith("windows")) {
+			if(hostOS.startsWith("windows")) {
 				checkDockerPB = new ProcessBuilder("CMD", "/C", "docker");
 			} else {
 				checkDockerPB = new ProcessBuilder("bash", "-cl", "docker");
