@@ -1,5 +1,6 @@
 package edu.kit.ipd.sdq.modsim.hla.example.docker;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -116,6 +117,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 						fos.close();
 				        rbc.close();
 				        System.out.println(dockerInstaller.getAbsolutePath());
+				        Desktop.getDesktop().open(dockerInstaller);
 	        			} catch (IOException e) {
 	        				// TODO Auto-generated catch block
 	        				e.printStackTrace();
