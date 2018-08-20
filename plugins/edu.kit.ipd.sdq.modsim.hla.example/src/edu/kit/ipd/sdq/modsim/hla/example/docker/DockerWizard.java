@@ -104,18 +104,25 @@ public class DockerWizard extends ExampleInstallerWizard {
 		}
 		
 		private boolean installDocker() {
-			URL url;
-	        try {
-	        	url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
-	        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-		        FileOutputStream fos = new FileOutputStream("dockerInstall.dmg");
-				fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-				fos.close();
-		        rbc.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	        	new Thread() {
+	        		public void run() {
+	        			String osTempDir = System.getProperty("java.io.tmpdir");
+	        			try {
+	        			URL url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
+			        	File dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
+			        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
+				        FileOutputStream fos = new FileOutputStream(dockerInstaller);
+						fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+						fos.close();
+				        rbc.close();
+				        System.out.println(dockerInstaller.getAbsolutePath());
+	        			} catch (IOException e) {
+	        				// TODO Auto-generated catch block
+	        				e.printStackTrace();
+	        			}
+	        		}
+	        	}.start();
+			
 			return false;
 		}
 	}
