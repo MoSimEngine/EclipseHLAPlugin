@@ -30,6 +30,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		protected Button dockerRTIRadioButton;
 		protected Button installDockerButton;
 		private String hostOS;
+		private String dockerButtonText = "Docker Portico container RTI engine";
 
 		public DockerProjectPage(String pageName, String title, ImageDescriptor titleImage) {
 			super(pageName, title, titleImage);
@@ -50,17 +51,17 @@ public class DockerWizard extends ExampleInstallerWizard {
 			localRTIRadioButton.setSelection(true);
 			
 			dockerRTIRadioButton = new Button(dockerGroup, SWT.RADIO);
-			dockerRTIRadioButton.setText("Docker Portico container RTI engine");
+			dockerRTIRadioButton.setText(dockerButtonText);
 			dockerRTIRadioButton.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					Button source = (Button)e.getSource();
 					if(source.getSelection()) {
 						if(dockerCLIInstalled()) {
-							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": installed!");
+							dockerRTIRadioButton.setText(dockerButtonText + ": installed!");
 							dockerRTIRadioButton.getParent().layout();
 						} else {
-							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": not found, please install Docker CLI!");
+							dockerRTIRadioButton.setText(dockerButtonText + ": not installed!");
 							installDockerButton.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
 							
