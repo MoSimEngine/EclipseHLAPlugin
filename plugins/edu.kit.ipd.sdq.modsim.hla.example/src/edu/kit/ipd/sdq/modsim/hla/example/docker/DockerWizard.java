@@ -4,21 +4,22 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-
 import org.eclipse.emf.common.ui.CommonUIPlugin;
 import org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.ProgressBar;
 
 public class DockerWizard extends ExampleInstallerWizard {
 	
@@ -29,6 +30,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		protected Button localRTIRadioButton;
 		protected Button dockerRTIRadioButton;
 		protected Button installDockerButton;
+		protected ProgressBar dockerDownloadProgressBar;
 		private String hostOS;
 		private String dockerButtonText = "Docker Portico container RTI engine";
 
@@ -43,12 +45,24 @@ public class DockerWizard extends ExampleInstallerWizard {
 			Composite composite = (Composite)getControl();
 			
 			Group dockerGroup = new Group(composite, SWT.NONE);
-			dockerGroup.setLayout(new RowLayout(SWT.VERTICAL));
+			dockerGroup.setLayout(new GridLayout(2, false));
+			dockerGroup.setLayoutData(new GridData(SWT.BEGINNING, SWT.FILL, true, false));
 			dockerGroup.setText("Choose Portico RTI engine");
 			
 			localRTIRadioButton = new Button(dockerGroup, SWT.RADIO);
 			localRTIRadioButton.setText("Local plugin Portico RTI engine");
 			localRTIRadioButton.setSelection(true);
+			
+			installDockerButton = new Button(dockerGroup, SWT.PUSH);
+			installDockerButton.setText("Install Docker");
+			installDockerButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					installDocker();
+				}
+			});
+			installDockerButton.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, true, false));
+			installDockerButton.setVisible(false);
 			
 			dockerRTIRadioButton = new Button(dockerGroup, SWT.RADIO);
 			dockerRTIRadioButton.setText(dockerButtonText);
@@ -63,22 +77,18 @@ public class DockerWizard extends ExampleInstallerWizard {
 						} else {
 							dockerRTIRadioButton.setText(dockerButtonText + ": not installed!");
 							installDockerButton.setVisible(true);
+							dockerDownloadProgressBar.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
-							
+							installDockerButton.getParent().layout();
+							dockerGroup.layout();
 						}
 					}
 				}
 			});
 			
-			installDockerButton = new Button(dockerGroup, SWT.PUSH);
-			installDockerButton.setText("Install Docker");
-			installDockerButton.addSelectionListener(new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					installDocker();
-				}
-			});
-			installDockerButton.setVisible(false);
+			dockerDownloadProgressBar = new ProgressBar(dockerGroup, SWT.SMOOTH);
+			dockerDownloadProgressBar.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, true, false));
+			dockerDownloadProgressBar.setVisible(false);
 			
 		}
 		
