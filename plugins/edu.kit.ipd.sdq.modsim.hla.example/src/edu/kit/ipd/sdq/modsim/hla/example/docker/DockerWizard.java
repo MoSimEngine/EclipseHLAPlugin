@@ -58,11 +58,9 @@ public class DockerWizard extends ExampleInstallerWizard {
 					if(source.getSelection()) {
 						if(dockerCLIInstalled()) {
 							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": installed!");
-							//dockerRTIRadioButton.setImage(new Image(null, "../image92-check.png"));
 							dockerRTIRadioButton.getParent().layout();
 						} else {
 							dockerRTIRadioButton.setText(dockerRTIRadioButton.getText() + ": not found, please install Docker CLI!");
-							//dockerRTIRadioButton.setImage(new Image(null, "../remove.png"));
 							installDockerButton.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
 							
