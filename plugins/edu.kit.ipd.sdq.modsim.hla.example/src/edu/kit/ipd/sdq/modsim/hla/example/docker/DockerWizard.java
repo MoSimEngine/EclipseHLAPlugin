@@ -4,6 +4,8 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
@@ -20,6 +22,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.ProgressBar;
 
 public class DockerWizard extends ExampleInstallerWizard {
@@ -32,8 +35,10 @@ public class DockerWizard extends ExampleInstallerWizard {
 		protected Button dockerRTIRadioButton;
 		protected Button installDockerButton;
 		protected ProgressBar dockerDownloadProgressBar;
+		protected MessageBox linuxProceedMessageBox;
 		private String hostOS = System.getProperty("os.name").toLowerCase();
 		private String dockerButtonText = "Docker Portico container RTI engine";
+		
 
 		public DockerProjectPage(String pageName, String title, ImageDescriptor titleImage) {
 			super(pageName, title, titleImage);
@@ -59,7 +64,38 @@ public class DockerWizard extends ExampleInstallerWizard {
 			installDockerButton.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					installDocker();
+					if(hostOS.startsWith("windows") || hostOS.startsWith("mac")) {
+						installDocker(true);
+					} else {
+						linuxProceedMessageBox = new MessageBox(composite.getShell(), SWT.ICON_QUESTION | SWT.YES | SWT.NO);
+						linuxProceedMessageBox.setText("Installation for Linux");
+						linuxProceedMessageBox.setMessage("You seem to be running Linux. \n"
+								+ "The docker installation process provided by this plugin only works for the following Linux Distributions:\n"
+								+ "\n"
+								+ "- Ubuntu Bionic 18.04 (LTS)\n"
+								+ "- Ubuntu Artful 17.10\n" 
+								+ "- Ubuntu Xenial 16.04 (LTS)\n"
+								+ "\n"
+								+ "If you are running one of those distributions you can continue this process with YES.\n"
+								+ "\n"
+								+ "If you are running Ubuntu Trusty 14.04 (LTS) or some other Linux distribution please perform the installation as described here:\n"
+								+ "https://docs.docker.com/install/#supported-platforms\n"
+								+ "(The link will be openened automatically when you click NO)");
+						int messageBoxResponse = linuxProceedMessageBox.open();
+						if(messageBoxResponse == SWT.YES) {
+							installDocker(false);
+						} else {
+							try {
+								Desktop.getDesktop().browse(new URI("https://docs.docker.com/install/#supported-platforms"));
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} catch (URISyntaxException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+					}
 				}
 			});
 			installDockerButton.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, true, false));
@@ -112,31 +148,40 @@ public class DockerWizard extends ExampleInstallerWizard {
 			return true;
 		}
 		
-		private boolean installDocker() {
+		private boolean installDocker(boolean macOrWinInstall) {
 			dockerDownloadProgressBar.setVisible(true);
 			dockerDownloadProgressBar.getParent().layout();
         	Thread downloadThread = new Thread() {
         		public void run() {
         			String osTempDir = System.getProperty("java.io.tmpdir");
         			try {
-        			URL url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
-		        	File dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
-		        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-			        FileOutputStream fos = new FileOutputStream(dockerInstaller);
-					fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-					fos.close();
-			        rbc.close();
-			        System.out.println(dockerInstaller.getAbsolutePath());
-			        Desktop.getDesktop().open(dockerInstaller);
-			        Display.getDefault().asyncExec(new Runnable() {
-			               public void run() {
-			            	   dockerDownloadProgressBar.setVisible(false);
-			            	   installDockerButton.setVisible(false);
-			            	   dockerRTIRadioButton.setText(dockerButtonText + ": can be installed now!");
-			            	   dockerDownloadProgressBar.getParent().layout();
-			            	   installDockerButton.getParent().layout();
-			               }
-			            });
+        				URL url;
+        				File dockerInstaller;
+        				if(hostOS.startsWith("windows")) {
+        					System.out.println("Install Windows");
+        					url = new URL("https://download.docker.com/win/stable/19098/Docker%20for%20Windows%20Installer.exe");
+        					dockerInstaller = new File(osTempDir + "/dockerInstaller.exe");
+        				} else {
+        					System.out.println("Install Mac");
+        					url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
+        					dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
+        				}
+			        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
+				        FileOutputStream fos = new FileOutputStream(dockerInstaller);
+						fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+						fos.close();
+				        rbc.close();
+				        System.out.println(dockerInstaller.getAbsolutePath());
+				        Desktop.getDesktop().open(dockerInstaller);
+				        Display.getDefault().asyncExec(new Runnable() {
+				               public void run() {
+				            	   dockerDownloadProgressBar.setVisible(false);
+				            	   installDockerButton.setVisible(false);
+				            	   dockerRTIRadioButton.setText(dockerButtonText + ": can be installed now!");
+				            	   dockerDownloadProgressBar.getParent().layout();
+				            	   installDockerButton.getParent().layout();
+				               }
+				            });
         			} catch (IOException e) {
         				// TODO Auto-generated catch block
         				e.printStackTrace();
