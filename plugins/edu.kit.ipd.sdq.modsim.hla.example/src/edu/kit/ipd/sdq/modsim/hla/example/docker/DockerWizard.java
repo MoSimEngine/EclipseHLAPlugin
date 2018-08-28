@@ -18,6 +18,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.ProgressBar;
 
@@ -77,7 +78,6 @@ public class DockerWizard extends ExampleInstallerWizard {
 						} else {
 							dockerRTIRadioButton.setText(dockerButtonText + ": not installed!");
 							installDockerButton.setVisible(true);
-							dockerDownloadProgressBar.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
 							installDockerButton.getParent().layout();
 							dockerGroup.layout();
@@ -86,7 +86,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 				}
 			});
 			
-			dockerDownloadProgressBar = new ProgressBar(dockerGroup, SWT.SMOOTH);
+			dockerDownloadProgressBar = new ProgressBar(dockerGroup, SWT.INDETERMINATE);
 			dockerDownloadProgressBar.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, true, false));
 			dockerDownloadProgressBar.setVisible(false);
 			
@@ -114,25 +114,37 @@ public class DockerWizard extends ExampleInstallerWizard {
 		}
 		
 		private boolean installDocker() {
-	        	new Thread() {
-	        		public void run() {
-	        			String osTempDir = System.getProperty("java.io.tmpdir");
-	        			try {
-	        			URL url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
-			        	File dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
-			        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-				        FileOutputStream fos = new FileOutputStream(dockerInstaller);
-						fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-						fos.close();
-				        rbc.close();
-				        System.out.println(dockerInstaller.getAbsolutePath());
-				        Desktop.getDesktop().open(dockerInstaller);
-	        			} catch (IOException e) {
-	        				// TODO Auto-generated catch block
-	        				e.printStackTrace();
-	        			}
-	        		}
-	        	}.start();
+			dockerDownloadProgressBar.setVisible(true);
+			dockerDownloadProgressBar.getParent().layout();
+        	Thread downloadThread = new Thread() {
+        		public void run() {
+        			String osTempDir = System.getProperty("java.io.tmpdir");
+        			try {
+        			URL url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
+		        	File dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
+		        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
+			        FileOutputStream fos = new FileOutputStream(dockerInstaller);
+					fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+					fos.close();
+			        rbc.close();
+			        System.out.println(dockerInstaller.getAbsolutePath());
+			        Desktop.getDesktop().open(dockerInstaller);
+			        Display.getDefault().asyncExec(new Runnable() {
+			               public void run() {
+			            	   dockerDownloadProgressBar.setVisible(false);
+			            	   installDockerButton.setVisible(false);
+			            	   dockerRTIRadioButton.setText(dockerButtonText + ": can be installed now!");
+			            	   dockerDownloadProgressBar.getParent().layout();
+			            	   installDockerButton.getParent().layout();
+			               }
+			            });
+        			} catch (IOException e) {
+        				// TODO Auto-generated catch block
+        				e.printStackTrace();
+        			}
+        		}
+        	};
+        	downloadThread.start();
 			
 			return false;
 		}
