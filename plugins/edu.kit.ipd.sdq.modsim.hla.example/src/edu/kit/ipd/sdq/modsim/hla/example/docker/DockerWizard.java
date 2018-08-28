@@ -32,7 +32,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		protected Button dockerRTIRadioButton;
 		protected Button installDockerButton;
 		protected ProgressBar dockerDownloadProgressBar;
-		private String hostOS;
+		private String hostOS = System.getProperty("os.name").toLowerCase();
 		private String dockerButtonText = "Docker Portico container RTI engine";
 
 		public DockerProjectPage(String pageName, String title, ImageDescriptor titleImage) {
@@ -93,7 +93,6 @@ public class DockerWizard extends ExampleInstallerWizard {
 		}
 		
 		private boolean dockerCLIInstalled(){
-			hostOS = System.getProperty("os.name").toLowerCase();
 			ProcessBuilder checkDockerPB;
 			
 			if(hostOS.startsWith("windows")) {
