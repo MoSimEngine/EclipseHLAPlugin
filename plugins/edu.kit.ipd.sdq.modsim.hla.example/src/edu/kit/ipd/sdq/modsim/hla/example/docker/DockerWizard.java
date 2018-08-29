@@ -71,7 +71,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 			localRTIRadioButton.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					refresh();
+					asyncRefresh();
 				}
 			});
 			
@@ -140,7 +140,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 						installDockerButton.setVisible(false);
 						installDockerButton.getParent().layout();
 					}
-					refresh();
+					asyncRefresh();
 				}
 			});
 			
@@ -241,6 +241,15 @@ public class DockerWizard extends ExampleInstallerWizard {
 					setPageComplete(false);
 				}
 			}
+		}
+		
+		public void asyncRefresh() {
+			setPageComplete(false);
+			Display.getDefault().asyncExec(new Runnable() {
+	            public void run() {
+        			refresh();
+        		}
+			});
 		}
 		
 		public boolean porticoDockerContainerInstalled() {
