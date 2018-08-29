@@ -68,6 +68,13 @@ public class DockerWizard extends ExampleInstallerWizard {
 			localRTIRadioButton = new Button(dockerGroup, SWT.RADIO);
 			localRTIRadioButton.setText("Local plugin Portico RTI engine");
 			localRTIRadioButton.setSelection(true);
+			localRTIRadioButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					refresh();
+				}
+			});
+			
 			
 			installDockerButton = new Button(dockerGroup, SWT.PUSH);
 			installDockerButton.setText("Install Docker");
@@ -129,6 +136,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 							dockerGroup.layout();
 						}
 					}
+					refresh();
 				}
 			});
 			
