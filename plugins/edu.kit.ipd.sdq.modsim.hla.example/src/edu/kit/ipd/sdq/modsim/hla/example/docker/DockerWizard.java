@@ -229,8 +229,28 @@ public class DockerWizard extends ExampleInstallerWizard {
 		}
 		
 		public boolean porticoDockerContainerInstalled() {
-			// TODO do actual check for porticoDockerContainer
-			return true;
+			String outputString = "";
+			ProcessBuilder checkPorticoPB;
+			if(hostOS.startsWith("windows")) {
+				checkPorticoPB = new ProcessBuilder("CMD", "/C", "docker images");
+			} else 
+			{
+				checkPorticoPB = new ProcessBuilder("bash", "-cl", "docker images");
+			}
+			try {
+				checkPorticoPB
+					.inheritIO()
+					.directory(new File(System.getProperty("user.home")));
+				try(java.util.Scanner scanner = new java.util.Scanner(checkPorticoPB.start().getInputStream())) 
+				   { 
+				       outputString = scanner.useDelimiter("\\A").hasNext() ? scanner.next() : "";
+				   }
+				System.out.println(outputString);
+				// TODO check output for portico container
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return false;
 		}
 	}
 	
