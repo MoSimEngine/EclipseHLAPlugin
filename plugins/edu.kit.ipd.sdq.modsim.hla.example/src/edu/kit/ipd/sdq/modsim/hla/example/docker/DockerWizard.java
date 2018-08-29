@@ -51,6 +51,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 
 		public DockerProjectPage(String pageName, String title, ImageDescriptor titleImage) {
 			super(pageName, title, titleImage);
+			setPageComplete(false);
 		}
 		
 		@Override
@@ -205,6 +206,23 @@ public class DockerWizard extends ExampleInstallerWizard {
         	downloadThread.start();
 			
 			return false;
+		}
+		
+		/*
+		 * Override refresh, because the standard example wizard sets Page to complete on true, as soon as you select a project.
+		 * @see org.eclipse.emf.common.ui.wizard.AbstractExampleInstallerWizard.ProjectPage#refresh()
+		 */
+		@Override
+		public void refresh() {
+			super.refresh();
+			if(!dockerCLIInstalled() || !porticoDockerContainerInstalled()) {
+				super.setPageComplete(false);
+			}
+		}
+		
+		public boolean porticoDockerContainerInstalled() {
+			// TODO do actual check for porticoDockerContainer
+			return true;
 		}
 	}
 	
