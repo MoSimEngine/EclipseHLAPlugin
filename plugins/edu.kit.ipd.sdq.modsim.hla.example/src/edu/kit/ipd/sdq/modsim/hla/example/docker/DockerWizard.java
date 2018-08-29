@@ -198,14 +198,21 @@ public class DockerWizard extends ExampleInstallerWizard {
             				e.printStackTrace();
             			}
         			} else {
-        				
         				ProcessBuilder installDockerLinuxPB = new ProcessBuilder("bash", "-cl", linuxInstallCommand);
+        				try {
+        					installDockerLinuxPB
+        						.inheritIO()
+        						.directory(new File(System.getProperty("user.home")))
+        						.start();
+        				} catch (IOException e) {
+        					e.printStackTrace();
+        				}
         			}
         		}
         	};
         	downloadThread.start();
 			
-			return false;
+			return true;
 		}
 		
 		/*
