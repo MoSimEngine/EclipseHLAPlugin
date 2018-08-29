@@ -135,6 +135,9 @@ public class DockerWizard extends ExampleInstallerWizard {
 							installDockerButton.getParent().layout();
 							dockerGroup.layout();
 						}
+					} else {
+						installDockerButton.setVisible(false);
+						installDockerButton.getParent().layout();
 					}
 					refresh();
 				}
