@@ -162,38 +162,43 @@ public class DockerWizard extends ExampleInstallerWizard {
 			dockerDownloadProgressBar.getParent().layout();
         	Thread downloadThread = new Thread() {
         		public void run() {
-        			String osTempDir = System.getProperty("java.io.tmpdir");
-        			try {
-        				URL url;
-        				File dockerInstaller;
-        				if(hostOS.startsWith("windows")) {
-        					System.out.println("Install Windows");
-        					url = new URL("https://download.docker.com/win/stable/19098/Docker%20for%20Windows%20Installer.exe");
-        					dockerInstaller = new File(osTempDir + "/dockerInstaller.exe");
-        				} else {
-        					System.out.println("Install Mac");
-        					url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
-        					dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
-        				}
-			        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-				        FileOutputStream fos = new FileOutputStream(dockerInstaller);
-						fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-						fos.close();
-				        rbc.close();
-				        System.out.println(dockerInstaller.getAbsolutePath());
-				        Desktop.getDesktop().open(dockerInstaller);
-				        Display.getDefault().asyncExec(new Runnable() {
-				               public void run() {
-				            	   dockerDownloadProgressBar.setVisible(false);
-				            	   installDockerButton.setVisible(false);
-				            	   dockerRTIRadioButton.setText(dockerButtonText + ": can be installed now!");
-				            	   dockerDownloadProgressBar.getParent().layout();
-				            	   installDockerButton.getParent().layout();
-				               }
-				            });
-        			} catch (IOException e) {
-        				// TODO Auto-generated catch block
-        				e.printStackTrace();
+        			if(macOrWinInstall) {
+        				String osTempDir = System.getProperty("java.io.tmpdir");
+            			try {
+            				URL url;
+            				File dockerInstaller;
+            				if(hostOS.startsWith("windows")) {
+            					System.out.println("Install Windows");
+            					url = new URL("https://download.docker.com/win/stable/19098/Docker%20for%20Windows%20Installer.exe");
+            					dockerInstaller = new File(osTempDir + "/dockerInstaller.exe");
+            				} else {
+            					System.out.println("Install Mac");
+            					url = new URL("https://download.docker.com/mac/stable/26399/Docker.dmg");
+            					dockerInstaller = new File(osTempDir + "/dockerInstall.dmg");
+            				}
+    			        	ReadableByteChannel rbc = Channels.newChannel(url.openStream());
+    				        FileOutputStream fos = new FileOutputStream(dockerInstaller);
+    						fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+    						fos.close();
+    				        rbc.close();
+    				        System.out.println(dockerInstaller.getAbsolutePath());
+    				        Desktop.getDesktop().open(dockerInstaller);
+    				        Display.getDefault().asyncExec(new Runnable() {
+    				               public void run() {
+    				            	   dockerDownloadProgressBar.setVisible(false);
+    				            	   installDockerButton.setVisible(false);
+    				            	   dockerRTIRadioButton.setText(dockerButtonText + ": can be installed now!");
+    				            	   dockerDownloadProgressBar.getParent().layout();
+    				            	   installDockerButton.getParent().layout();
+    				               }
+    				            });
+            			} catch (IOException e) {
+            				// TODO Auto-generated catch block
+            				e.printStackTrace();
+            			}
+        			} else {
+        				
+        				ProcessBuilder installDockerLinuxPB = new ProcessBuilder("bash", "-cl", linuxInstallCommand);
         			}
         		}
         	};
