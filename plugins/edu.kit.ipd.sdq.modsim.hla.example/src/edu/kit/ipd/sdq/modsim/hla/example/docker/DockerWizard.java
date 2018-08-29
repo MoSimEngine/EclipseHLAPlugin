@@ -1,9 +1,11 @@
 package edu.kit.ipd.sdq.modsim.hla.example.docker;
 
 import java.awt.Desktop;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -255,22 +257,24 @@ public class DockerWizard extends ExampleInstallerWizard {
 		public boolean porticoDockerContainerInstalled() {
 			String outputString = "";
 			ProcessBuilder checkPorticoPB;
+			Process checkPorticoP;
 			if(hostOS.startsWith("windows")) {
 				checkPorticoPB = new ProcessBuilder("CMD", "/C", "docker images");
-			} else 
-			{
+			} else {
 				checkPorticoPB = new ProcessBuilder("bash", "-cl", "docker images");
 			}
 			try {
 				checkPorticoPB
-					.inheritIO()
 					.directory(new File(System.getProperty("user.home")));
-				try(java.util.Scanner scanner = new java.util.Scanner(checkPorticoPB.start().getInputStream())) 
-				   { 
-				       outputString = scanner.useDelimiter("\\A").hasNext() ? scanner.next() : "";
-				   }
-				System.out.println(outputString);
-				// TODO check output for portico container
+				checkPorticoP = checkPorticoPB.start();
+				BufferedReader br=new BufferedReader(new InputStreamReader(checkPorticoP.getInputStream()));
+				String line;
+				StringBuilder sb = new StringBuilder();
+				while((line=br.readLine())!=null) sb.append(line + "\n");
+				outputString = sb.toString();
+				if(outputString.toLowerCase().matches("(?s).*\\bfboehle\\/portico( *)2\\.0\\.2.*")) {
+					return true;
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
