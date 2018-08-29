@@ -136,6 +136,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 							dockerGroup.layout();
 						}
 					} else {
+						dockerRTIRadioButton.setText(dockerButtonText);
 						installDockerButton.setVisible(false);
 						installDockerButton.getParent().layout();
 					}
