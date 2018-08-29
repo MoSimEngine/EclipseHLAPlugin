@@ -238,7 +238,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 			// check if docker engine is selected and if docker cli or portico container are not installed
 			if(dockerRTIRadioButton != null) {
 				if(dockerRTIRadioButton.getSelection() && (!dockerCLIInstalled() || !porticoDockerContainerInstalled())) {
-					super.setPageComplete(false);
+					setPageComplete(false);
 				}
 			}
 		}
