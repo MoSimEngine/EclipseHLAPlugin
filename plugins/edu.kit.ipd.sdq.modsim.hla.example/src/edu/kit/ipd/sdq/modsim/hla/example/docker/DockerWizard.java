@@ -87,35 +87,46 @@ public class DockerWizard extends ExampleInstallerWizard {
 			installDockerButton.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					if(hostOS.startsWith("windows") || hostOS.startsWith("mac")) {
-						installDocker(true);
+					if(dockerCLIInstalled()) {
+						// check and install portico container
+						if(!porticoDockerContainerInstalled()) {
+							installPorticoImage();
+						}
 					} else {
-						linuxProceedMessageBox = new MessageBox(composite.getShell(), SWT.ICON_QUESTION | SWT.YES | SWT.NO);
-						linuxProceedMessageBox.setText("Installation for Linux");
-						linuxProceedMessageBox.setMessage("You seem to be running Linux. \n"
-								+ "The docker installation process provided by this plugin only works for the following Linux Distributions:\n"
-								+ "\n"
-								+ "- Ubuntu Bionic 18.04 (LTS)\n"
-								+ "- Ubuntu Artful 17.10\n" 
-								+ "- Ubuntu Xenial 16.04 (LTS)\n"
-								+ "\n"
-								+ "If you are running one of those distributions you can continue this process with YES.\n"
-								+ "\n"
-								+ "If you are running Ubuntu Trusty 14.04 (LTS) or some other Linux distribution please perform the installation as described here:\n"
-								+ "https://docs.docker.com/install/#supported-platforms\n"
-								+ "(The link will be openened automatically when you click NO)");
-						int messageBoxResponse = linuxProceedMessageBox.open();
-						if(messageBoxResponse == SWT.YES) {
-							installDocker(false);
+						// docker missing -> install
+						if(hostOS.startsWith("windows") || hostOS.startsWith("mac")) {
+							installDocker(true);
 						} else {
-							try {
-								Desktop.getDesktop().browse(new URI("https://docs.docker.com/install/#supported-platforms"));
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							} catch (URISyntaxException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
+							linuxProceedMessageBox = new MessageBox(composite.getShell(), SWT.ICON_QUESTION | SWT.YES | SWT.NO);
+							linuxProceedMessageBox.setText("Installation for Linux");
+							linuxProceedMessageBox.setMessage("You seem to be running Linux. \n"
+									+ "The docker installation process provided by this plugin only works for the following Linux Distributions:\n"
+									+ "\n"
+									+ "- Ubuntu Bionic 18.04 (LTS)\n"
+									+ "- Ubuntu Artful 17.10\n" 
+									+ "- Ubuntu Xenial 16.04 (LTS)\n"
+									+ "\n"
+									+ "If you are running one of those distributions you can continue this process with YES.\n"
+									+ "\n"
+									+ "If you are running Ubuntu Trusty 14.04 (LTS) or some other Linux distribution please perform the installation as described here:\n"
+									+ "https://docs.docker.com/install/#supported-platforms\n"
+									+ "(The link will be openened automatically when you click NO)");
+							int messageBoxResponse = linuxProceedMessageBox.open();
+							if(messageBoxResponse == SWT.YES) {
+								installDocker(false);
+							} else {
+								try {
+									Desktop.getDesktop().browse(new URI("https://docs.docker.com/install/#supported-platforms"));
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								} catch (URISyntaxException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								installDockerButton.setText("Install Portico docker image");
+								installDockerButton.setVisible(true);
+								installDockerButton.getParent().layout();
 							}
 						}
 					}
