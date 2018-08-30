@@ -143,10 +143,17 @@ public class DockerWizard extends ExampleInstallerWizard {
 					Button source = (Button)e.getSource();
 					if(source.getSelection()) {
 						if(dockerCLIInstalled()) {
-							dockerRTIRadioButton.setText(dockerButtonText + ": installed!");
-							dockerRTIRadioButton.getParent().layout();
+							if(porticoDockerContainerInstalled()) {
+								dockerRTIRadioButton.setText(dockerButtonText + ": \ninstalled!");
+								dockerRTIRadioButton.getParent().layout();
+							} else {
+								installDockerButton.setText("Install Portico docker image");
+								installDockerButton.setVisible(true);
+								dockerRTIRadioButton.setText(dockerButtonText + ": \ninstalled, but Portico container missing!");
+								dockerRTIRadioButton.getParent().layout();
+							}
 						} else {
-							dockerRTIRadioButton.setText(dockerButtonText + ": not installed!");
+							dockerRTIRadioButton.setText(dockerButtonText + ": \nnot installed!");
 							installDockerButton.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
 							installDockerButton.getParent().layout();
