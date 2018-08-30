@@ -181,7 +181,6 @@ public class DockerWizard extends ExampleInstallerWizard {
 				checkDockerPB = new ProcessBuilder("CMD", "/C", "docker -v");
 			} else {
 				checkDockerPB = new ProcessBuilder("bash", "-cl", "docker -v");
-				//return false;
 			}
 			try {
 				checkDockerPB
