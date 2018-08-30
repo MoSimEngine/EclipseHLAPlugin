@@ -38,6 +38,8 @@ public class DockerWizard extends ExampleInstallerWizard {
 		protected Button installDockerButton;
 		protected ProgressBar dockerDownloadProgressBar;
 		protected MessageBox linuxProceedMessageBox;
+		protected Group dockerGroup;
+		protected Composite composite;
 		private String hostOS = System.getProperty("os.name").toLowerCase();
 		private String dockerButtonText = "Docker Portico container RTI engine";
 		private String linuxInstallCommand = "sudo apt-get remove docker docker-engine docker-ce docker.io;"
@@ -60,13 +62,15 @@ public class DockerWizard extends ExampleInstallerWizard {
 		public void createControl(Composite parent) {
 			super.createControl(parent);
 			
-			Composite composite = (Composite)getControl();
+			composite = (Composite)getControl();
 			
-			Group dockerGroup = new Group(composite, SWT.NONE);
-			dockerGroup.setLayout(new GridLayout(2, false));
-			dockerGroup.setLayoutData(new GridData(SWT.BEGINNING, SWT.FILL, true, false));
+			dockerGroup = new Group(composite, SWT.NONE);
+			GridLayout layout = new GridLayout(2, false);
+			layout.marginBottom = 5;
+			dockerGroup.setLayout(layout);
+			dockerGroup.setLayoutData(new GridData(SWT.BEGINNING, SWT.FILL, true, true));
 			dockerGroup.setText("Choose Portico RTI engine");
-			
+									
 			localRTIRadioButton = new Button(dockerGroup, SWT.RADIO);
 			localRTIRadioButton.setText("Local plugin Portico RTI engine");
 			localRTIRadioButton.setSelection(true);
