@@ -224,8 +224,8 @@ public class DockerWizard extends ExampleInstallerWizard {
     				        Display.getDefault().asyncExec(new Runnable() {
     				               public void run() {
     				            	   dockerDownloadProgressBar.setVisible(false);
-    				            	   installDockerButton.setVisible(false);
-    				            	   dockerRTIRadioButton.setText(dockerButtonText + ": can be installed now!");
+    				            	   installDockerButton.setText("Install Portico docker image");
+    				            	   dockerRTIRadioButton.setText(dockerButtonText + ": \ncan be installed now!");
     				            	   dockerDownloadProgressBar.getParent().layout();
     				            	   installDockerButton.getParent().layout();
     				               }
