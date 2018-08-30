@@ -234,6 +234,45 @@ public class DockerWizard extends ExampleInstallerWizard {
 			return true;
 		}
 		
+		private boolean installPorticoImage() {
+			ProcessBuilder installPorticoImage;
+			Process installPorticoImageP;
+			String outputString = "";
+			if(hostOS.startsWith("windows")) {
+				installPorticoImage = new ProcessBuilder("CMD", "/C", "docker run fboehle/portico:2.0.2");
+			} else {
+				installPorticoImage = new ProcessBuilder("bash", "-cl", "docker run fboehle/portico:2.0.2");
+			}
+			try {
+				installPorticoImageP = installPorticoImage.start();
+				BufferedReader br=new BufferedReader(new InputStreamReader(installPorticoImageP.getErrorStream()));
+				String line;
+				StringBuilder sb = new StringBuilder();
+				while((line=br.readLine())!=null) sb.append(line + "\n");
+				outputString = sb.toString();
+				if(outputString.contains("command not found")) {
+					MessageBox dockerMissingMessageBox = new MessageBox(Display.getDefault().getActiveShell(), SWT.ICON_ERROR | SWT.OK);
+					dockerMissingMessageBox.setText("Docker CLI not found");
+					dockerMissingMessageBox.setMessage("The Docker CLI (Command Line Interface) couldn't be found.\n"
+            	   		+ "\nPlease verify that Docker is correctly installed and that you can run the docker command in CMD or bash and try again.");
+					dockerMissingMessageBox.open();
+					return false;
+				} else {
+					Display.getDefault().asyncExec(new Runnable() {
+			               public void run() {
+			            	   dockerRTIRadioButton.setText(dockerButtonText + ":\nDocker and Portico image installed!");
+			            	   dockerGroup.layout();
+			               }
+					});
+					return true;
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				
+			}
+			return false;
+		}
+		
 		/*
 		 * Override refresh, because the standard example wizard sets Page to complete on true, as soon as you select a project.
 		 * @see org.eclipse.emf.common.ui.wizard.AbstractExampleInstallerWizard.ProjectPage#refresh()
