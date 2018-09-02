@@ -30,7 +30,8 @@
                description="Restaurant Beispiel"/>
          <projectDescriptor
                contentURI="examples/edu.kit.ipd.sdq.modsim.hla.example.game/"
-               description="Game"
+               description="Zahlen Ratespiel: Es können mehere Client-Federates gestartet werden, diese Tippen jeweils immer in mehreren Runden.
+                Die RandomNumberProviderFederate generiert eine zufällige Zahl. Die Server Federate wertet das Spiel am Ende aus."
                name="edu.kit.ipd.sdq.modsim.hla.example.game"/>
       </example>
       
