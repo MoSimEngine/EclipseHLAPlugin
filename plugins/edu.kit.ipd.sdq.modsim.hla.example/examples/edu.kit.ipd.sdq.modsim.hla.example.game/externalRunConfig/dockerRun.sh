@@ -1,6 +1,7 @@
 #!/bin/bash -l
 #cd hla/
-containerID="$(docker run -d -i portico_2.0.1 /bin/bash)"
+containerID="$(docker run -d -i fboehle/portico:2.0.2 /bin/bash)"
+cd src
 docker cp ./. "${containerID}":/portico/hla/
 docker cp ../model/. "${containerID}":/portico/hla/model/
 #docker attach "${containerID}"
