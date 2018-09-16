@@ -314,7 +314,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 			});
 		}
 		
-		public boolean porticoDockerContainerInstalled() {
+		private boolean porticoDockerContainerInstalled() {
 			String outputString = "";
 			ProcessBuilder checkPorticoPB;
 			Process checkPorticoP;
