@@ -297,7 +297,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		@Override
 		public void refresh() {
 			super.refresh();
-			// check if docker engine is selected and if docker cli or portico container are not installed
+			// check if docker engine is selected and if Docker CLI or Portico container are not installed
 			if(dockerRTIRadioButton != null) {
 				if(dockerRTIRadioButton.getSelection() && (!dockerCLIInstalled() || !porticoDockerContainerInstalled())) {
 					setPageComplete(false);
