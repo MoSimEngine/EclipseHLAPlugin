@@ -176,22 +176,37 @@ public class DockerWizard extends ExampleInstallerWizard {
 		
 		private boolean dockerCLIInstalled(){
 			ProcessBuilder checkDockerPB;
-			
+			Process checkDockerP;
+			String outputStringError, outputStringInput = "";
 			if(hostOS.startsWith("windows")) {
 				checkDockerPB = new ProcessBuilder("CMD", "/C", "docker -v");
 			} else {
 				checkDockerPB = new ProcessBuilder("bash", "-cl", "docker -v");
 			}
 			try {
-				checkDockerPB
-					.inheritIO()
-					.directory(new File(System.getProperty("user.home")))
-					.start();
+				checkDockerPB.directory(new File(System.getProperty("user.home")));
+				checkDockerP = checkDockerPB.start();
+				BufferedReader brError = new BufferedReader(new InputStreamReader(checkDockerP.getErrorStream()));
+				BufferedReader brInput = new BufferedReader(new InputStreamReader(checkDockerP.getInputStream()));
+				String line;
+				StringBuilder sb = new StringBuilder();
+				while((line = brError.readLine())!=null) sb.append(line + "\n");
+				outputStringError = sb.toString();
+				while((line = brInput.readLine())!=null) sb.append(line + "\n");
+				outputStringInput = sb.toString();
+				System.out.println("Error: " + outputStringError);
+				System.out.println("Input: " + outputStringInput);
+				if(outputStringError.toLowerCase().matches("(?s).* command not found\n")) {
+					return false;
+				}
+				if(outputStringInput.matches("(?s)Docker version .*")) {
+					return true;
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 				return false;
 			}
-			return true;
+			return false;
 		}
 		
 		private boolean installDocker(boolean macOrWinInstall) {
