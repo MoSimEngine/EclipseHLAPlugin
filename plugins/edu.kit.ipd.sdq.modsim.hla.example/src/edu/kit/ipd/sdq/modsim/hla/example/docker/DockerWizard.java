@@ -41,6 +41,7 @@ public class DockerWizard extends ExampleInstallerWizard {
 		protected Group dockerGroup;
 		protected Composite composite;
 		private String hostOS = System.getProperty("os.name").toLowerCase();
+		private String hostOSlineSeperator = System.getProperty("line.seperator");
 		private String dockerButtonText = "Docker Portico container RTI engine";
 		private String linuxInstallCommand = "sudo apt-get remove docker docker-engine docker-ce docker.io;"
 				+ "sudo apt-get update;"
@@ -99,17 +100,17 @@ public class DockerWizard extends ExampleInstallerWizard {
 						} else {
 							linuxProceedMessageBox = new MessageBox(composite.getShell(), SWT.ICON_QUESTION | SWT.YES | SWT.NO);
 							linuxProceedMessageBox.setText("Installation for Linux");
-							linuxProceedMessageBox.setMessage("You seem to be running Linux. \n"
-									+ "The docker installation process provided by this plugin only works for the following Linux Distributions:\n"
-									+ "\n"
-									+ "- Ubuntu Bionic 18.04 (LTS)\n"
-									+ "- Ubuntu Artful 17.10\n" 
-									+ "- Ubuntu Xenial 16.04 (LTS)\n"
-									+ "\n"
-									+ "If you are running one of those distributions you can continue this process with YES.\n"
-									+ "\n"
-									+ "If you are running Ubuntu Trusty 14.04 (LTS) or some other Linux distribution please perform the installation as described here:\n"
-									+ "https://docs.docker.com/install/#supported-platforms\n"
+							linuxProceedMessageBox.setMessage("You seem to be running Linux. " + hostOSlineSeperator
+									+ "The docker installation process provided by this plugin only works for the following Linux Distributions:" + hostOSlineSeperator
+									+ hostOSlineSeperator
+									+ "- Ubuntu Bionic 18.04 (LTS)" + hostOSlineSeperator
+									+ "- Ubuntu Artful 17.10" + hostOSlineSeperator 
+									+ "- Ubuntu Xenial 16.04 (LTS)" + hostOSlineSeperator
+									+ hostOSlineSeperator
+									+ "If you are running one of those distributions you can continue this process with YES." + hostOSlineSeperator
+									+ hostOSlineSeperator
+									+ "If you are running Ubuntu Trusty 14.04 (LTS) or some other Linux distribution please perform the installation as described here:"  + hostOSlineSeperator
+									+ "https://docs.docker.com/install/#supported-platforms" + hostOSlineSeperator
 									+ "(The link will be openened automatically when you click NO)");
 							int messageBoxResponse = linuxProceedMessageBox.open();
 							if(messageBoxResponse == SWT.YES) {
@@ -144,16 +145,16 @@ public class DockerWizard extends ExampleInstallerWizard {
 					if(source.getSelection()) {
 						if(dockerCLIInstalled()) {
 							if(porticoDockerContainerInstalled()) {
-								dockerRTIRadioButton.setText(dockerButtonText + ": \ninstalled!");
+								dockerRTIRadioButton.setText(dockerButtonText + ": " + hostOSlineSeperator + "installed!");
 								dockerRTIRadioButton.getParent().layout();
 							} else {
 								installDockerButton.setText("Install Portico docker image");
 								installDockerButton.setVisible(true);
-								dockerRTIRadioButton.setText(dockerButtonText + ": \ninstalled, but Portico container missing!");
+								dockerRTIRadioButton.setText(dockerButtonText + ": " + hostOSlineSeperator + "installed, but Portico container missing!");
 								dockerRTIRadioButton.getParent().layout();
 							}
 						} else {
-							dockerRTIRadioButton.setText(dockerButtonText + ": \nnot installed!");
+							dockerRTIRadioButton.setText(dockerButtonText + ": " + hostOSlineSeperator + "not installed!");
 							installDockerButton.setVisible(true);
 							dockerRTIRadioButton.getParent().layout();
 							installDockerButton.getParent().layout();
@@ -239,7 +240,7 @@ public class DockerWizard extends ExampleInstallerWizard {
     				               public void run() {
     				            	   dockerDownloadProgressBar.setVisible(false);
     				            	   installDockerButton.setText("Install Portico docker image");
-    				            	   dockerRTIRadioButton.setText(dockerButtonText + ": \ncan be installed now!");
+    				            	   dockerRTIRadioButton.setText(dockerButtonText + ": " + hostOSlineSeperator + "can be installed now!");
     				            	   dockerDownloadProgressBar.getParent().layout();
     				            	   installDockerButton.getParent().layout();
     				               }
@@ -285,14 +286,15 @@ public class DockerWizard extends ExampleInstallerWizard {
 				if(outputString.contains("command not found")) {
 					MessageBox dockerMissingMessageBox = new MessageBox(Display.getDefault().getActiveShell(), SWT.ICON_ERROR | SWT.OK);
 					dockerMissingMessageBox.setText("Docker CLI not found");
-					dockerMissingMessageBox.setMessage("The Docker CLI (Command Line Interface) couldn't be found.\n"
-            	   		+ "\nPlease verify that Docker is correctly installed and that you can run the docker command in CMD or bash and try again.");
+					dockerMissingMessageBox.setMessage("The Docker CLI (Command Line Interface) couldn't be found." + hostOSlineSeperator
+            	   		+  hostOSlineSeperator
+            	   		+ "Please verify that Docker is correctly installed and that you can run the docker command in CMD or bash and try again.");
 					dockerMissingMessageBox.open();
 					return false;
 				} else {
 					Display.getDefault().asyncExec(new Runnable() {
 			               public void run() {
-			            	   dockerRTIRadioButton.setText(dockerButtonText + ":\nDocker and Portico image installed!");
+			            	   dockerRTIRadioButton.setText(dockerButtonText + ":" + hostOSlineSeperator + "Docker and Portico image installed!");
 			            	   dockerGroup.layout();
 			               }
 					});
